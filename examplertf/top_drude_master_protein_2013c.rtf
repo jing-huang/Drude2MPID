@@ -1,0 +1,3079 @@
+* Topology for drude water, ions and proteins
+* 
+38
+
+MASS     1 HDP1A     1.00800 H  ! polar H, general 
+MASS     2 HDP1B     1.00800 H  ! polar H, ammonium cations 
+MASS     3 HDA1A     1.00800 H  ! aliphatic, H, methyl (-CH), general 
+MASS     4 HDA1C     1.00800 H  ! aliphatic, H, methyl (-CH), special case for ammonium cations 
+MASS     5 HDA1R5    1.00800 H  ! aliphatic, H, methyl (-CH), 5-membered ring 
+MASS     6 HDA2A     1.00800 H  ! aliphatic, H, methyl (-CH2), general 
+MASS     7 HDA2C     1.00800 H  ! aliphatic, H, methyl (-CH2), special case for ammonium cations 
+MASS     8 HDA2E     1.00800 H  ! aliphatic, H, methyl (-CH2), ethers 
+MASS     9 HDA2R5    1.00800 H  ! aliphatic, H, methyl (-CH2), 5-membered ring 
+MASS    10 HDA3A     1.00800 H  ! aliphatic, H, methyl (-CH3), general 
+MASS    11 HDA3B     1.00800 H  ! aliphatic, H, methyl (-CH3), special case for methanol 
+MASS    12 HDA3C     1.00800 H  ! aliphatic, H, methyl (-CH3), special case for ammonium cations 
+MASS    13 HDR5A     1.00800 H  ! 5-membered ring, HG and HD2 in imidazole 
+MASS    14 HDR5B     1.00800 H  ! 5-membered ring, HE1 in imidazole 
+MASS    15 HDR5C     1.00800 H  ! 5-membered ring, H on carbon adjacent to N in pyrrole 
+MASS    16 HDR5D     1.00800 H  ! 5-membered ring, HG and HD2 in imidazolium 
+MASS    17 HDR5E     1.00800 H  ! 5-membered ring, HE1 in imidazolium 
+MASS    18 HDR6A     1.00800 H  ! aromatic H, 6-membered ring, general 
+MASS    19 HDR6B     1.00800 H  ! aromatic H, 6-membered ring, adjacent to N (pyridine) 
+MASS    20 HDR6C     1.00800 H  ! aromatic H, 6-membered ring, between 2 N's (pyrimidine) 
+ 
+MASS    41 CD2O1A   12.01100 C  ! carbonyl C, neutral (amide) 
+MASS    42 CD2O2A   12.01100 C  ! carboxylate C, anionic 
+MASS    43 CD2O3A   12.01100 C  ! carboxylate C, neutral (esters, acids) 
+MASS    44 CD2O3B   12.01100 C  ! ester carbonyl C, for lipids
+MASS    45 CD2R5A   12.01100 C  ! 5-membered ring, CG and CD2 in imidazole 
+MASS    46 CD2R5B   12.01100 C  ! 5-membered ring, CE1 in imidazole 
+MASS    47 CD2R5C   12.01100 C  ! 5-membered ring, pyrole, adjacent to N 
+MASS    48 CD2R5D   12.01100 C  ! 5-membered ring, CG and CD2 in imidizolium 
+MASS    49 CD2R5E   12.01100 C  ! 5-membered ring, CE1 in imidizolium 
+MASS    50 CD2R6A   12.01100 C  ! aromatic C, 6-membered ring 
+MASS    51 CD2R6B   12.01100 C  ! aromatic C, 6-membered ring, adjacent to N (pyridine) 
+MASS    52 CD2R6C   12.01100 C  ! aromatic C, 6-membered ring, between 2 heteroatoms (pyrimidine) 
+MASS    53 CD2R6D   12.01100 C  ! aromatic C, 6-membered ring, bridging far from N (indole) 
+MASS    54 CD2R6F   12.01100 C  ! aromatic C, 6-membered ring, bridging adjacent to N7 (purine) 
+MASS    55 CD2R6H   12.01100 C  ! aromatic C, 6-membered ring, cytosine cmb 01/09 
+MASS    60 CD2N1A   12.01100 C  ! guanidinium C (EH) 
+MASS    61 CD30A    12.01100 C  ! aliphatic sp3 C, 0 hydrogens 
+MASS    62 CD31A    12.01100 C  ! aliphatic sp3 C, 1 hydrogen 
+MASS    63 CD31C    12.01100 C  ! aliphatic sp3 C, 1 hydrogen, special case for carbons adjacent to esters/amides
+MASS    64 CD31FA   12.01100 C  ! aliphatic sp3 C, 1 hydrogen, furanoses, anomeric C1
+MASS    65 CD31FB   12.01100 C  ! aliphatic sp3 C, 1 hydrogen, furanoses, C2,C3
+MASS    66 CD31FC   12.01100 C  ! aliphatic sp3 C, 1 hydrogen, furanoses, C4
+MASS    67 CD31G    12.01100 C  ! aliphatic sp3 C, 1 hydrogen, glycerol, xhe 
+MASS    68 CD315A   12.01100 C  ! aliphatic sp3 C, 1 hydrogen, ether, 5-memberd ring, CPNM 
+MASS    69 CD315B   12.01100 C  ! aliphatic sp3 C, 1 hydrogen, ether, 5-memberd ring, TF2M 
+MASS    70 CD316A   12.01100 C  ! aliphatic sp3 C, 1 hydrogens, 6-membered ring 
+MASS    71 CD32A    12.01100 C  ! aliphatic sp3 C, 2 hydrogens 
+MASS    72 CD32AL   12.01100 C  ! aliphatic sp3 C, 2 hydrogens, for lipids
+MASS    73 CD32B    12.01100 C  ! added for GLU, from CD32A 
+MASS    74 CD32C    12.01100 C  ! aliphatic sp3 C, 2 hydrogens,	special case for carbons adjacent to esters/amides (see 
+MASS    75 CD32E    12.01100 C  ! aliphatic sp3 C, 2 hydrogens, ether, for CH2 adjacent to O in linear ethers 
+MASS    76 CD32F    12.01100 C  ! aliphatic sp3 C, 2 hydrogens, ethylene glycol, glycerol, xhe 
+MASS    77 CD325A   12.01100 C  ! aliphatic sp3 C, 2 hydrogens, 5-membered ring 
+MASS    78 CD325B   12.01100 C  ! aliphatic sp3 C, 2 hydrogens, ether, 5-membered ring, THF 
+MASS    79 CD326A   12.01100 C  ! aliphatic sp3 C, 2 hydrogens, 6-membered ring 
+MASS    80 CD326B   12.01100 C  ! aliphatic sp3 C, 2 hydrogens, ether, 6-membered ring, THP 
+MASS    81 CD33A    12.01100 C  ! aliphatic sp3 C, 3 hydrogens 
+MASS    82 CD33B    12.01100 C  ! aliphatic sp3 C, 3 hydrogens: special case for methanol 
+MASS    83 CD33C    12.01100 C  ! aliphatic sp3 C, 3 hydrogens: special case for carbons adjacent to esters/amides (see 
+MASS    84 CD33D    12.01100 C  ! aliphatic sp3 C, 3 hydrogens: special methyl C for esters (MAS), neutral acids (ACEH)
+MASS    85 CD33E    12.01100 C  ! aliphatic sp3 C, 3 hydrogens: special case for CH3 adjacent to a O in linear ethers 
+MASS    86 CD31HA   12.01100 C  ! anomeric carbon, Hexopyranose, dpatel
+MASS    87 CD31HB   12.01100 C  ! aliphatic sp3 C, 1 hydrogens, 6-membered ring, Hexopyranose
+MASS    88 CD31HC   12.01100 C  ! aliphatic sp3 C, 1 hydrogens, ether, 6-membered ring, Hexopyranose 1
+ 
+MASS   131 ND2A1    14.00700 N  ! amide, primary (ACEM) 
+MASS   132 ND2A2    14.00700 N  ! amide, secondary (NMA, peptide bond) 
+MASS   133 ND2A3    14.00700 N  ! amide, tertiary (DMA) 
+MASS   134 ND2B1    14.00700 N  ! amine, primary (NA bases) 
+MASS   135 ND2R5A   14.00700 N  ! neutral his protonated ring nitrogen 
+MASS   136 ND2R5B   14.00700 N  ! neutral his unprotonated ring nitrogen 
+MASS   137 ND2R5C   14.00700 N  ! positive his protonated ring nitrogen 
+MASS   138 ND2R5D   14.00700 N  !  aromatic N, 5-membered, purine bases 
+MASS   139 ND2R5E   14.00700 N  ! neutral unprotonated ring nitrogen from Gua/Ade 
+MASS   140 ND2R5F   14.00700 N  ! N1 in THY, alexey
+MASS   141 ND2R6A   14.00700 N  ! aromatic N, 6-membered ring (pyridine) 
+MASS   142 ND2R6B   14.00700 N  ! aromatic N, 6-membered ring (pyrimidine, N-C-N connectivity) 
+MASS   143 ND2R6C   14.00700 N  ! aromatic N, 6-membered ring: protonated: NA bases 
+MASS   144 ND2R6D   14.00700 N  ! N9 in GUA, alexey
+MASS   145 ND2P1A   14.00700 N  ! protonated sp2 nitrogen: guanidinium (EH) 
+MASS   146 ND3P2A   14.00700 N  ! protonated sp3 nitrogen, 0, 1 or 3 hydrogens 
+MASS   147 ND3P3A   14.00700 N  ! protonated sp3 nitrogen, 3 or 4 hydrogens (includes ammonia) 
+MASS   148 ND3A3    14.00700 N  ! imino nitrogen as in proline 
+ 
+MASS   171 OD2C1A   15.99940 O  ! carbonyl O, neutral (acetone, NMA, acetamide) 
+MASS   172 OD2C1B   15.99940 O  ! carbonyl O, neutral (NA bases) 
+MASS   173 OD2C2A   15.99940 O  ! carboxylate O, anionic (acetate) 
+MASS   174 OD2C2B   15.99940 O  ! carboxylate O, anionic (phosphate), lipids
+MASS   175 OD2C2C   15.99940 O  ! carboxylate O, anionic (phosphate), nucleic acids
+MASS   176 OD2C3A   15.99940 O  ! carboxylate O, neutral (esters) 
+MASS   177 OD2C3B   15.99940 O  ! carbonyl O for esters, for lipids
+MASS   178 OD30A    15.99940 O  ! ether oxygen 
+MASS   179 OD30B    15.99940 O  ! ester oxygen (phosphate), lipid
+MASS   180 OD30BN   15.99940 O  ! ester oxygen (phosphate), nucleic acid
+MASS   181 OD30C    15.99940 O  ! ester oxygen (esters) 
+MASS   182 OD30CL   15.99940 O  ! ester oxygen (esters), for lipids
+MASS   183 OD30D    15.99900 O  ! hydroxyl oxygen in acids 
+MASS   184 OD305A   15.99940 O  ! ether oxygen, 5-membered ring (tetrahydrofuran) 
+MASS   185 OD306A   15.99940 O  ! ether oxygen, 6-membered ring (tetrahydropyran) 
+MASS   186 OD31A    15.99900 O  ! hydroxyl oxygen 
+MASS   187 OD31B    15.99900 O  ! hydroxyl oxygen, special case for long, primary alcohols 
+MASS   188 OD31C    15.99900 O  ! hydroxyl oxygen, phenol 
+MASS   189 OD31E    15.99900 O  ! hydroxyl oxygen, ethylene glycol, glycerol, xhe 
+MASS   190 OD31F    15.99900 O  ! hydroxyl oxygen, Carbohydrates, dpatel 
+! phosphorous 
+MASS   211 PD1A    30.974000 P  ! phosphorus, (DMP) 
+MASS   212 PD1AN   30.974000 P  ! phosphorus, (DMP), nucleic acids
+! Rare gases, dummy atom, lone pair 
+MASS   221 DUM       0.00000 H  ! dummy atom 
+MASS   222 XED       4.00260 He ! helium 
+MASS   223 NED      20.17970 Ne ! neon 
+MASS   224 DRUD      0.00000 H  ! drude particle 
+! Sulfurs 
+MASS   226 SD31A    32.06000 S  ! MESH 
+MASS   227 SD31B    32.06000 S  ! ETSH 
+MASS   228 SD30A    32.06000 S  ! EMS, DMS 
+MASS   229 SD30B    32.06000 S  ! DMDS 
+! Lone pairs
+MASS   231 LPD       0.00000 H  ! general lone pair without LJ parameters, NBFIX or NBTHOLE
+MASS   232 LPDW      0.00000 H  ! lone pair for water: Note overlap of SWM4 and SWM6 LPs
+MASS   233 LPDO1     0.00000 H  ! lone pair, amide carbonyl oxygen, based on NMA
+MASS   234 LPDNA1    0.00000 H  ! lone pair, general nucleic acid
+! SWM4 and SWM6 polarizable water models
+MASS   241 ODW      15.99940 O  ! water oxygen, SWM4
+MASS   242 ODW6     15.99940 O  ! water oxygen, SWM6
+MASS   243 HDW       1.00800 H  ! water hydrogen 
+MASS   244 DOH2      0.00000 H  ! water Drude 
+!! Monovalent ions 
+MASS   251 LID       6.94120 Li ! Lithium 
+MASS   252 POTD     39.10200 K  ! Potassium
+MASS   253 SODD     23.00000 Na ! Sodium
+MASS   254 RBD      85.46783 Rb ! Rubidium 
+MASS   255 CSD     132.90545 Cs ! Caesium 
+MASS   256 FAD      18.99840 F  ! Fluoride
+MASS   257 CLAD     35.45320 CL ! Chloride
+MASS   258 BRAD     79.90410 Br ! Bromide
+MASS   259 IAD     126.90447 I  ! Iodide 
+! Divalent ions 
+MASS   271 MAGD     24.30000 Mg ! Magnesium
+MASS   272 CALD     40.08000 CA ! calcium
+MASS   273 SRD      87.62000 Sr ! Strontium 
+MASS   274 BAD     137.33000 Ba ! Barium 
+MASS   275 ZND      65.38400 Zn ! Zinc 
+ 
+DECL -CA 
+DECL -C 
+DECL -O 
+DECL +N 
+DECL +HN 
+DECL +CA 
+
+!DEFA FIRS NTER LAST CTER 
+!reset default patches 
+DEFA FIRS NONE LAST NONE 
+AUTOGENERATE ANGLES DIHEDRALS DRUDE  !note use of DRUDE 
+ 
+! SWM4-NDP water 
+RESI SWM4          0.000 
+GROUP 
+ATOM OH2  ODW      0.00000  TYPE DOH2    ALPHA -0.97825258 THOLE 1.3 
+ATOM OM   LPDW    -1.11466 
+ATOM H1   HDW      0.55733 
+ATOM H2   HDW      0.55733 
+BOND OH2 H1 
+BOND OH2 H2 
+BOND OH2 OM 
+BOND H1  H2 ! for SHAKE 
+ANGLE  H1 OH2 H2
+ACCEPTOR OH2 
+LONEPAIR bisector OM OH2 H1 H2 distance 0.24034492 angle 0.0 dihe 0.0 
+IC   H1   OH2   H2    H1    0.9572 104.52     0.00   37.74   1.5139 
+IC   H1   OM   *OH2   H2    0.9572  52.26   180.00   52.26   0.9572 
+IC   H2   H1    OH2   OM    1.5139  37.74     0.01   52.26   0.24034492 
+PATCH FIRST NONE LAST NONE 
+
+! SWM6-NDP water
+RESI SWM6          0.0000                                     !
+GROUP                                                         !     OL1    H1
+ATOM OH2  ODW6     0.2880  TYPE DOH2  ALPHA -0.88  THOLE 1.3  !        \  /
+ATOM OL1  LPDW    -0.1080                                     !   DOH2~OH2-OM
+ATOM OL2  LPDW    -0.1080                                     !        /  \
+ATOM H1   HDW      0.5307                                     !     OL2    H2
+ATOM H2   HDW      0.5307                                     !
+ATOM OM   LPDW    -1.1334                                     !
+BOND OH2 H1
+BOND OH2 H2
+BOND OH2 OL1
+BOND OH2 OL2
+BOND OH2 OM
+BOND H1  H2 ! for SHAKE
+ANGLE H1 OH2 H2
+ACCEPTOR OH2
+LONEPAIR bisector OL1 OH2 H1 H2 distance 0.315 angle 129.451 dihe  90.0
+LONEPAIR bisector OL2 OH2 H1 H2 distance 0.315 angle 129.451 dihe 270.0
+LONEPAIR bisector OM  OH2 H1 H2 distance 0.247 angle   0.000 dihe   0.0
+IC   H1   OH2   H2    H1    0.9572  104.520    0.000   37.740  1.5139
+IC   H2   H1    OH2   OL1   1.5139   37.740  123.054  112.888  0.3150
+IC   H1   H2    OH2   OL2   1.5139   37.740  123.054  112.888  0.3150
+IC   H1   OL1  *OH2   H2    0.9572  112.888  118.270  112.888  0.9572
+IC   H2   OL2  *OH2   H1    0.9572  112.888  118.270  112.888  0.9572
+IC   H2   H1    OH2   OM    1.5139   37.740    0.000   52.260  0.2470
+PATCH FIRST NONE LAST NONE
+ 
+!! Monovalent Ions 
+ 
+RESI LI            1.000 ! Lithium Ion 
+GROUP 
+ATOM LI   LID      1.000  ALPHA -0.032 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI POT           1.000 ! Potassium Ion 
+GROUP 
+ATOM POT  POTD     1.000  ALPHA -0.830 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI SOD           1.000 ! Sodium Ion 
+GROUP 
+ATOM SOD  SODD     1.000  ALPHA -0.157 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI RB            1.000 ! Rubidium Ion 
+GROUP 
+ATOM RB   RBD      1.000  ALPHA -1.370 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI CS            1.000 ! Caesium Ion 
+GROUP 
+ATOM CS   CSD      1.000  ALPHA  -2.360 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI F            -1.000 ! Fluoride Ion 
+GROUP 
+ATOM F    FAD     -1.000  ALPHA -1.786 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI CLA          -1.000 ! Chloride Ion 
+GROUP 
+ATOM CLA  CLAD    -1.000  ALPHA -3.969 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI BR           -1.000 ! Bromide Ion 
+GROUP 
+ATOM BR   BRAD    -1.000  ALPHA -5.262 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI I            -1.000 ! Iodide Ion 
+GROUP 
+ATOM I    IAD     -1.000  ALPHA -7.439 
+PATCHING FIRST NONE LAST NONE 
+ 
+!! Divalent Ions 
+! Yu et al. JCTC 2010, 6, 774-786 
+RESI ZN            2.000 ! Zinc Ion 
+GROUP 
+ATOM ZN   ZND      2.000  ALPHA -0.420   
+PATCHING FIRST NONE LAST NONE 
+! 
+RESI MAG           2.000 ! Magnesium Ion 
+GROUP 
+ATOM MAG  MAGD     2.000  ALPHA -0.075 
+PATCHING FIRST NONE LAST NONE 
+! 
+RESI CAL           2.000 ! Calcium Ion 
+GROUP 
+ATOM CAL  CALD     2.000  ALPHA -0.490  
+PATCHING FIRST NONE LAST NONE 
+! 
+RESI SR            2.000 ! Strontium Ion 
+GROUP 
+ATOM SR   SRD      2.000  ALPHA -0.870   
+PATCHING FIRST NONE LAST NONE 
+! 
+RESI BA            2.000 ! Barium Ion 
+GROUP 
+ATOM BA   BAD      2.000  ALPHA -1.560  
+PATCHING FIRST NONE LAST NONE 
+! 
+ 
+!! Dummy atom and rare gases 
+RESI DUM           0.000 ! DUMMY ATOM 
+GROUP 
+ATOM DUM  DUM      0.000 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI HE            0.000 ! helium 
+GROUP 
+ATOM HE   XED      0.000  ALPHA -0.205 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI NE            0.000 ! neon 
+GROUP 
+ATOM NE   NED      0.000  ALPHA -0.396 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI HE1           0.000 ! helium 
+GROUP 
+ATOM HE01 XED      0.000  ALPHA -0.205 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI NE1           0.000 ! neon 
+GROUP 
+ATOM NE01 NED      0.000  ALPHA -0.396 
+PATCHING FIRST NONE LAST NONE 
+ 
+RESI ALAD          0.000 ! Alanine dipeptide 
+! 
+!     HY1     OY           O            HT1 
+!       \     ||   HN  HA  ||   HNT     / 
+!        \    ||   |   |   ||   |      / 
+!   HY2--CAY--CY---N---CA--C----NT---CAT--HT2 
+!        /             |               \ 
+!       /         HB1--CB--HB3          \ 
+!     HY3              |                HT3 
+!                     HB2 
+! 
+GROUP 
+ATOM CAY  CD33C   -0.102  ALPHA -1.894  THOLE 2.122 
+ATOM HY1  HDA3A    0.048 
+ATOM HY2  HDA3A    0.048 
+ATOM HY3  HDA3A    0.048 
+ATOM CY   CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM OY   OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPY1 LPDO1   -0.312 
+ATOM LPY2 LPDO1   -0.227 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM CB   CD33A   -0.099  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA3A    0.033 
+ATOM HB2  HDA3A    0.033 
+ATOM HB3  HDA3A    0.033 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+ATOM NT   ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HNT  HDP1A    0.272 
+ATOM CAT  CD33C   -0.055  ALPHA -1.639  THOLE 2.122 
+ATOM HTC1 HDA3A    0.055 
+ATOM HTC2 HDA3A    0.055 
+ATOM HTC3 HDA3A    0.055 
+ 
+BOND CAY CY    CY  N     N   CA 
+BOND CA  C     C   NT    NT  CAT 
+BOND CY  OY    C   O 
+BOND N   HN    NT  HNT 
+BOND CA  HA    CA  CB    CB  HB1   CB  HB2   CB  HB3 
+BOND CAY HY1   CAY HY2   CAY HY3 
+BOND CAT HTC1  CAT HTC2  CAT HTC3 
+BOND OY  LPY1  OY  LPY2 
+BOND O   LPOA  O   LPOB 
+ 
+IMPR CY  CAY N  OY  N  CY  CA  HN 
+IMPR C   CA  NT O   NT C   CAT HNT 
+ 
+!2D correction surface 
+CMAP CY  N  CA C   N  CA C   NT 
+ 
+LONEPAIR relative LPY1 OY CY  CAY distance 0.30 angle 91.0 dihe 0.0 
+LONEPAIR relative LPY2 OY CY  CAY distance 0.30 angle 91.0 dihe 180.0 
+LONEPAIR relative LPOA O  C   CA  distance 0.30 angle 91.0 dihe 0.0 
+LONEPAIR relative LPOB O  C   CA  distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OY CY  LPY1 LPY2 A11  0.82322 A22  1.14332 
+ANISOTROPY O  C   LPOA LPOB A11  0.82322 A22  1.14332 
+ 
+IC CY   N     CA    C      0.00    0.00  -86.00    0.00   0.00 !phi C7eq=-86,C7ax=76 
+IC N    CA    C     NT     0.00    0.00   79.00    0.00   0.00 !psi C7eq= 79,C7ax=-55 
+IC CAY  CY    N     CA     0.00    0.00  180.00    0.00   0.00 !omega left 
+IC CA   C     NT    CAT    0.00    0.00  180.00    0.00   0.00 !omega right 
+IC N    CAY   *CY   OY     0.00    0.00  144.00    0.00   0.00 
+IC CA   CY    *N    HN     0.00    0.00  180.00    0.00   0.00 
+IC NT   CA    *C    O      0.00    0.00  120.00    0.00   0.00 
+IC CAT  C     *NT   HNT    0.00    0.00  180.00    0.00   0.00 
+IC C    N     *CA   CB     0.00    0.00 -120.00    0.00   0.00 !define L sugar 
+IC C    N     *CA   HA     0.00    0.00  120.00    0.00   0.00 ! 
+IC N    CA    CB    HB1    0.00    0.00  180.00    0.00   0.00 
+IC HB1  CA    *CB   HB2    0.00    0.00  120.00    0.00   0.00 
+IC HB1  CA    *CB   HB3    0.00    0.00 -120.00    0.00   0.00 
+IC N    CY    CAY   HY1    0.00    0.00  180.00    0.00   0.00 
+IC HY1  CY    *CAY  HY2    0.00    0.00  120.00    0.00   0.00 
+IC HY1  CY    *CAY  HY3    0.00    0.00 -120.00    0.00   0.00 
+IC C    NT    CAT   HTC1   0.00    0.00  180.00    0.00   0.00 
+IC HTC1 NT    *CAT  HTC2   0.00    0.00  120.00    0.00   0.00 
+IC HTC1 NT    *CAT  HTC3   0.00    0.00 -120.00    0.00   0.00 
+patch first none last none 
+ 
+RESI ALA           0.000 
+! 
+!     | 
+!  HN-N 
+!     |     HB1 
+!     |    / 
+!  HA-CA--CB-HB2 
+!     |    \ 
+!     |     HB3 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD33A   -0.099  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA3A    0.033 
+ATOM HB2  HDA3A    0.033 
+ATOM HB3  HDA3A    0.033 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2       CB   HB3 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3551 126.4900  180.0000 115.4200  0.9996 
+IC -C   N    CA   C     1.3551 126.4900  180.0000 114.4400  1.5390 !phi, -60. for a-helix 
+IC N    CA   C    +N    1.4592 114.4400  180.0000 116.8400  1.3558 !psi, -45. for a-helix 
+IC +N   CA   *C   O     1.3558 116.8400  180.0000 122.5200  1.2297 
+IC CA   C    +N   +CA   1.5390 116.8400  180.0000 126.7700  1.4613 
+IC N    C    *CA  CB    1.4592 114.4400  123.2300 111.0900  1.5461 
+IC N    C    *CA  HA    1.4592 114.4400 -120.4500 106.3900  1.0840 
+IC C    CA   CB   HB1   1.5390 111.0900  177.2500 109.6000  1.1109 
+IC HB1  CA   *CB  HB2   1.1109 109.6000  119.1300 111.0500  1.1119 
+IC HB1  CA   *CB  HB3   1.1109 109.6000 -119.5800 111.6100  1.1114 
+ 
+RESI ARG           1.000 ! arginine 
+! 
+!     |                      HH11 
+!  HN-N                       | 
+!     |   HB1 HG1 HD1 HE     NH1-HH12 
+!     |   |   |   |   |    //(+) 
+!  HA-CA--CB--CG--CD--NE--CZ 
+!     |   |   |   |         \ 
+!     |   HB2 HG2 HD2        NH2-HH22 
+!   O=C                       | 
+!     |                      HH21 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD32A   -0.156  ALPHA -1.660  THOLE 1.3 
+ATOM HG1  HDA2A    0.078 
+ATOM HG2  HDA2A    0.078 
+GROUP 
+ATOM CD   CD32A    0.227  ALPHA -1.788  THOLE 0.342 
+ATOM HD1  HDA2A    0.078 
+ATOM HD2  HDA2A    0.078 
+ATOM NE   ND2P1A  -0.748  ALPHA -1.550  THOLE 1.538 
+ATOM HE   HDP1B    0.378 
+ATOM CZ   CD2N1A   1.129  ALPHA -1.096  THOLE 0.262 
+ATOM NH1  ND2P1A  -0.809  ALPHA -1.403  THOLE 1.538 
+ATOM HH11 HDP1B    0.369 
+ATOM HH12 HDP1B    0.369 
+ATOM NH2  ND2P1A  -0.809  ALPHA -1.403  THOLE 1.538 
+ATOM HH21 HDP1B    0.369 
+ATOM HH22 HDP1B    0.369 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   CD        CD   HD1       CD   HD2 
+BOND CD   NE        NE   HE        NE   CZ 
+BOND CZ   NH1       NH1  HH11      NH1  HH12 
+BOND CZ   NH2       NH2  HH21      NH2  HH22 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR CZ  NH1 NH2 NE 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+DONOR HE NE 
+DONOR HH11 NH1 
+DONOR HH12 NH1 
+DONOR HH21 NH2 
+DONOR HH22 NH2 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3496 122.4500  180.0000 116.6700  0.9973 
+IC -C   N    CA   C     1.3496 122.4500  180.0000 109.8600  1.5227 
+IC N    CA   C    +N    1.4544 109.8600  180.0000 117.1200  1.3511 
+IC +N   CA   *C   O     1.3511 117.1200  180.0000 121.4000  1.2271 
+IC CA   C    +N   +CA   1.5227 117.1200  180.0000 124.6700  1.4565 
+IC N    C    *CA  CB    1.4544 109.8600  123.6400 112.2600  1.5552 
+IC N    C    *CA  HA    1.4544 109.8600 -117.9300 106.6100  1.0836 
+IC N    CA   CB   CG    1.4544 110.7000  180.0000 115.9500  1.5475 
+IC CG   CA   *CB  HB1   1.5475 115.9500  120.0500 106.4000  1.1163 
+IC CG   CA   *CB  HB2   1.5475 115.9500 -125.8100 109.5500  1.1124 
+IC CA   CB   CG   CD    1.5552 115.9500  180.0000 114.0100  1.5384 
+IC CD   CB   *CG  HG1   1.5384 114.0100  125.2000 108.5500  1.1121 
+IC CD   CB   *CG  HG2   1.5384 114.0100 -120.3000 108.9600  1.1143 
+IC CB   CG   CD   NE    1.5475 114.0100  180.0000 107.0900  1.5034 
+IC NE   CG   *CD  HD1   1.5034 107.0900  120.6900 109.4100  1.1143 
+IC NE   CG   *CD  HD2   1.5034 107.0900 -119.0400 111.5200  1.1150 
+IC CG   CD   NE   CZ    1.5384 107.0900  180.0000 123.0500  1.3401 
+IC CZ   CD   *NE  HE    1.3401 123.0500  180.0000 113.1400  1.0065 
+IC CD   NE   CZ   NH1   1.5034 123.0500  180.0000 118.0600  1.3311 
+IC NE   CZ   NH1  HH11  1.3401 118.0600 -178.2800 120.6100  0.9903 
+IC HH11 CZ   *NH1 HH12  0.9903 120.6100  171.1900 116.2900  1.0023 
+IC NH1  NE   *CZ  NH2   1.3311 118.0600  178.6400 122.1400  1.3292 
+IC NE   CZ   NH2  HH21  1.3401 122.1400 -174.1400 119.9100  0.9899 
+IC HH21 CZ   *NH2 HH22  0.9899 119.9100  166.1600 116.8800  0.9914 
+ 
+RESI ASN           0.000 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 OD1    HD21 (cis to OD1) 
+!     |   |   ||    / 
+!  HA-CA--CB--CG--ND2 
+!     |   |         \ 
+!     |   HB2        HD22 (trans to OD1) 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32C   -0.302  ALPHA -1.417  THOLE 1.130 
+ATOM HB1  HDA2A    0.082 
+ATOM HB2  HDA2A    0.082 
+ATOM CG   CD2O1A   0.906  ALPHA -1.583  THOLE 1.095 
+ATOM OD1  OD2C1A   0.035  ALPHA -0.885  THOLE 1.227 
+ATOM ND2  ND2A1   -0.782  ALPHA -1.717  THOLE 1.132 
+ATOM HD21 HDP1A    0.303 
+ATOM HD22 HDP1A    0.351 
+ATOM LPDA LPD     -0.411 
+ATOM LPDB LPD     -0.264 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   OD1 
+BOND CG   ND2       ND2  HD21      ND2  HD22 
+BOND O    LPOA      O    LPOB 
+BOND OD1  LPDA      OD1  LPDB 
+ 
+IMPR CG  CB  ND2 OD1 ND2 HD21 HD22 CG 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LPDA OD1 CG CB distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPDB OD1 CG CB distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OD1 CG LPDA LPDB A11 0.88  A22 1.32 
+ 
+DONOR HN N 
+DONOR HD21 ND2 
+DONOR HD22 ND2 
+ACCEPTOR OD1 CG 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3480 124.0500  180.0000 114.4900  0.9992 
+IC -C   N    CA   C     1.3480 124.0500  180.0000 105.2300  1.5245 
+IC N    CA   C    +N    1.4510 105.2300  180.0000 117.3800  1.3467 
+IC +N   CA   *C   O     1.3467 117.3800  180.0000 120.3200  1.2282 
+IC CA   C    +N   +CA   1.5245 117.3800  180.0000 124.8800  1.4528 
+IC N    C    *CA  CB    1.4510 105.2300  121.1800 113.0400  1.5627 
+IC N    C    *CA  HA    1.4510 105.2300 -115.5200 107.6300  1.0848 
+IC N    CA   CB   CG    1.4510 110.9100  180.0000 114.3000  1.5319 
+IC CG   CA   *CB  HB1   1.5319 114.3000  119.1700 107.8200  1.1120 
+IC CG   CA   *CB  HB2   1.5319 114.3000 -123.7400 110.3400  1.1091 
+IC CA   CB   CG   OD1   1.5627 114.3000  180.0000 122.5600  1.2323 
+IC OD1  CB   *CG  ND2   1.2323 122.5600 -179.1900 116.1500  1.3521 
+IC CB   CG   ND2  HD21  1.5319 116.1500 -179.2600 117.3500  0.9963 
+IC HD21 CG   *ND2 HD22  0.9963 117.3500  178.0200 120.0500  0.9951 
+ 
+RESI ASP          -1.000 
+! 
+!     | 
+!  HN-N 
+!     |   HB1   OD1 
+!     |   |    // 
+!  HA-CA--CB--CG 
+!     |   |    \ 
+!     |   HB2   OD2(-) 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.190  ALPHA -2.528  THOLE 1.414 ! charge adjusted 
+ATOM HB1  HDA2A    0.004 
+ATOM HB2  HDA2A    0.004 
+ATOM CG   CD2O2A   0.708  ALPHA -1.016  THOLE 0.899 
+ATOM OD1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OD2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LP1A LPD     -0.383 
+ATOM LP1B LPD     -0.383 
+ATOM LP2A LPD     -0.383 
+ATOM LP2B LPD     -0.383 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   OD1       CG   OD2 
+BOND O    LPOA      O    LPOB 
+BOND OD1  LP1A      OD1  LP1B 
+BOND OD2  LP2A      OD2  LP2B 
+ 
+IMPH OD1 CB  OD2 CG 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LP1A OD1 CG CB  distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LP1B OD1 CG CB  distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LP2A OD2 CG CB  distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LP2B OD2 CG CB  distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OD1 CG LP1A LP1B A11 0.7229 A22 1.265 
+ANISOTROPY OD2 CG LP2A LP2B A11 0.7229 A22 1.265 
+ 
+DONOR HN N 
+ACCEPTOR OD1 CG 
+ACCEPTOR OD2 CG 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3465 125.3100  180.0000 112.9400  0.9966 
+IC -C   N    CA   C     1.3465 125.3100  180.0000 105.6300  1.5315 
+IC N    CA   C    +N    1.4490 105.6300  180.0000 117.0600  1.3478 
+IC +N   CA   *C   O     1.3478 117.0600  180.0000 120.7100  1.2330 
+IC CA   C    +N   +CA   1.5315 117.0600  180.0000 125.3900  1.4484 
+IC N    C    *CA  CB    1.4490 105.6300  122.3300 114.1000  1.5619 
+IC N    C    *CA  HA    1.4490 105.6300 -116.4000 106.7700  1.0841 
+IC N    CA   CB   CG    1.4490 111.1000  180.0000 112.6000  1.5218 
+IC CG   CA   *CB  HB1   1.5218 112.6000  119.2200 109.2300  1.1086 
+IC CG   CA   *CB  HB2   1.5218 112.6000 -121.6100 110.6400  1.1080 
+IC CA   CB   CG   OD1   1.5619 112.6000  180.0000 117.9900  1.2565 
+IC OD1  CB   *CG  OD2   1.2565 117.9900 -170.2300 117.7000  1.2541 
+ 
+RESI CYS           0.000 ! cystiene 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 
+!     |   | 
+!  HA-CA--CB--SG 
+!     |   |     \ 
+!     |   HB2    HG1 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A    0.106  ALPHA -1.273  THOLE 0.716 
+ATOM HB1  HDA2A    0.013 
+ATOM HB2  HDA2A    0.013 
+ATOM SG   SD31B    0.050  ALPHA -2.180  THOLE 1.612 
+ATOM HG1  HDP1A    0.148 
+ATOM LPGA LPD     -0.165 
+ATOM LPGB LPD     -0.165 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   SG        SG   HG1 
+BOND SG   LPGA      SG   LPGB 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+LONEPAIR relative LPGA SG CB HG1 distance 0.75 angle 95.0 dihe 100.0 
+LONEPAIR relative LPGB SG CB HG1 distance 0.75 angle 95.0 dihe 260.0 
+ANISOTROPY SG CB LPGA LPGB A11 0.8800 A22 1.3200 
+ 
+DONOR HN N 
+DONOR HG1 SG 
+ACCEPTOR SG 
+ACCEPTOR O C 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3479 123.9300  180.0000 114.7700  0.9982 
+IC -C   N    CA   C     1.3479 123.9300  180.0000 105.8900  1.5202 
+IC N    CA   C    +N    1.4533 105.8900  180.0000 118.3000  1.3498 
+IC +N   CA   *C   O     1.3498 118.3000  180.0000 120.5900  1.2306 
+IC CA   C    +N   +CA   1.5202 118.3000  180.0000 124.5000  1.4548 
+IC N    C    *CA  CB    1.4533 105.8900  121.7900 111.9800  1.5584 
+IC N    C    *CA  HA    1.4533 105.8900 -116.3400 107.7100  1.0837 
+IC N    CA   CB   SG    1.4533 111.5600  180.0000 113.8700  1.8359 
+IC SG   CA   *CB  HB1   1.8359 113.8700  119.9100 107.2400  1.1134 
+IC SG   CA   *CB  HB2   1.8359 113.8700 -125.3200 109.8200  1.1124 
+IC CA   CB   SG   HG1   1.5584 113.8700  176.9600  97.1500  1.3341 
+ 
+RESI GLN           0.000 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 HG1 OE1   HE21 (cis to OE1) 
+!     |   |   |   ||    / 
+!  HA-CA--CB--CG--CD--NE2 
+!     |   |   |         \ 
+!     |   HB2 HG2       HE22 (trans to OE1) 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD32C   -0.302  ALPHA -1.417  THOLE 1.130 
+ATOM HG1  HDA2A    0.082 
+ATOM HG2  HDA2A    0.082 
+ATOM CD   CD2O1A   0.906  ALPHA -1.583  THOLE 1.095 
+ATOM OE1  OD2C1A   0.035  ALPHA -0.885  THOLE 1.227 
+ATOM NE2  ND2A1   -0.782  ALPHA -1.717  THOLE 1.132 
+ATOM HE21 HDP1A    0.303 
+ATOM HE22 HDP1A    0.351 
+ATOM LPEA LPD     -0.411 
+ATOM LPEB LPD     -0.264 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   CD        CD   OE1 
+BOND CD	  NE2       NE2  HE21      NE2 HE22 
+BOND O    LPOA      O    LPOB 
+BOND OE1  LPEA      OE1  LPEB 
+ 
+IMPR CD CG   NE2 OE1  NE2 HE21 HE22 CD 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LPEA OE1 CD CG distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPEB OE1 CD CG distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OE1 CD LPEA LPEB A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+DONOR HE21 NE2 
+DONOR HE22 NE2 
+ACCEPTOR OE1 CD 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3477 123.9300  180.0000 114.4500  0.9984 
+IC -C   N    CA   C     1.3477 123.9300  180.0000 106.5700  1.5180 
+IC N    CA   C    +N    1.4506 106.5700  180.0000 117.7200  1.3463 
+IC +N   CA   *C   O     1.3463 117.7200  180.0000 120.5900  1.2291 
+IC CA   C    +N   +CA   1.5180 117.7200  180.0000 124.3500  1.4461 
+IC N    C    *CA  CB    1.4506 106.5700  121.9100 111.6800  1.5538 
+IC N    C    *CA  HA    1.4506 106.5700 -116.8200 107.5300  1.0832 
+IC N    CA   CB   CG    1.4506 111.4400  180.0000 115.5200  1.5534 
+IC CG   CA   *CB  HB1   1.5534 115.5200  120.9300 106.8000  1.1147 
+IC CG   CA   *CB  HB2   1.5534 115.5200 -124.5800 109.3400  1.1140 
+IC CA   CB   CG   CD    1.5538 115.5200  180.0000 112.5000  1.5320 
+IC CD   CB   *CG  HG1   1.5320 112.5000  118.6900 110.4100  1.1112 
+IC CD   CB   *CG  HG2   1.5320 112.5000 -121.9100 110.7400  1.1094 
+IC CB   CG   CD   OE1   1.5534 112.5000  180.0000 121.5200  1.2294 
+IC OE1  CG   *CD  NE2   1.2294 121.5200  179.5700 116.8400  1.3530 
+IC CG   CD   NE2  HE21  1.5320 116.8400 -179.7200 116.8600  0.9959 
+IC HE21 CD   *NE2 HE22  0.9959 116.8600 -178.9100 119.8300  0.9943 
+ 
+RESI GLU          -1.000 ! glutamate 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 HG1   OE1 
+!     |   |   |    // 
+!  HA-CA--CB--CG--CD 
+!     |   |   |    \ 
+!     |   HB2 HG2   OE2(-) 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32B   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD32A   -0.190  ALPHA -2.528  THOLE 1.414 
+ATOM HG1  HDA2A    0.004 
+ATOM HG2  HDA2A    0.004 
+ATOM CD   CD2O2A   0.708  ALPHA -1.016  THOLE 0.899 
+ATOM OE1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OE2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LP1A LPD     -0.383 
+ATOM LP1B LPD     -0.383 
+ATOM LP2A LPD     -0.383 
+ATOM LP2B LPD     -0.383 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   CD        CD   OE1       CD   OE2 
+BOND O    LPOA      O    LPOB 
+BOND OE1  LP1A      OE1  LP1B 
+BOND OE2  LP2A      OE2  LP2B 
+ 
+IMPH OE1 CG  OE2 CD 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LP1A OE1 CD CG  distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LP1B OE1 CD CG  distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LP2A OE2 CD CG  distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LP2B OE2 CD CG  distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OE1 CD LP1A LP1B A11 0.7229 A22 1.265 
+ANISOTROPY OE2 CD LP2A LP2B A11 0.7229 A22 1.265 
+ 
+DONOR HN N 
+ACCEPTOR OE1 CD 
+ACCEPTOR OE2 CD 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3471 124.4500  180.0000 113.9900  0.9961 
+IC -C   N    CA   C     1.3471 124.4500  180.0000 107.2700  1.5216 
+IC N    CA   C    +N    1.4512 107.2700  180.0000 117.2500  1.3501 
+IC +N   CA   *C   O     1.3501 117.2500  180.0000 121.0700  1.2306 
+IC CA   C    +N   +CA   1.5216 117.2500  180.0000 124.3000  1.4530 
+IC N    C    *CA  CB    1.4512 107.2700  121.9000 111.7100  1.5516 
+IC N    C    *CA  HA    1.4512 107.2700 -118.0600 107.2600  1.0828 
+IC N    CA   CB   CG    1.4512 111.0400  180.0000 115.6900  1.5557 
+IC CG   CA   *CB  HB1   1.5557 115.6900  121.2200 108.1600  1.1145 
+IC CG   CA   *CB  HB2   1.5557 115.6900 -123.6500 109.8100  1.1131 
+IC CA   CB   CG   CD    1.5516 115.6900  180.0000 115.7300  1.5307 
+IC CD   CB   *CG  HG1   1.5307 115.7300  117.3800 109.5000  1.1053 
+IC CD   CB   *CG  HG2   1.5307 115.7300 -121.9600 111.0000  1.1081 
+IC CB   CG   CD   OE1   1.5557 115.7300  180.0000 114.9900  1.2590 
+IC OE1  CG   *CD  OE2   1.2590 114.9900 -179.1000 120.0800  1.2532 
+ 
+RESI GLY           0.000 
+! 
+!     | 
+!     N-H 
+!     | 
+!     | 
+! HA1-CA-HA2 
+!     | 
+!     | 
+!     C=O 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD32C    0.186  ALPHA -0.960  THOLE 1.078 
+ATOM HA1  HDA2A   -0.017 
+ATOM HA2  HDA2A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+ 
+BOND N    CA        CA   C         C    +N 
+BOND N    HN        C    O 
+BOND CA   HA1       CA   HA2 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3475 122.8200  180.0000 115.6200  0.9992 
+IC -C   N    CA   C     1.3475 122.8200  180.0000 108.9400  1.4971 
+IC N    CA   C    +N    1.4553 108.9400  180.0000 117.6000  1.3479 
+IC +N   CA   *C   O     1.3479 117.6000  180.0000 120.8500  1.2289 
+IC CA   C    +N   +CA   1.4971 117.6000  180.0000 124.0800  1.4560 
+IC N    C    *CA  HA1   1.4553 108.9400  117.8600 108.0300  1.0814 
+IC N    C    *CA  HA2   1.4553 108.9400 -118.1200 107.9500  1.0817 
+PATCHING FIRS GNTE
+ 
+RESI HSD           0.000 ! neutral HIS, proton on ND1 
+! 
+!     |          HD1    HE1 
+!  HN-N           |     / 
+!     |   HB1    ND1--CE1 
+!     |   |     /      || 
+!  HA-CA--CB--CG       || 
+!     |   |     \\     || 
+!     |   HB2    CD2--NE2 
+!   O=C           | 
+!     |          HD2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A    0.017  ALPHA -1.739  THOLE 0.399 !charge adjusted 
+ATOM HB1  HDA2A    0.078 
+ATOM HB2  HDA2A    0.078 
+ATOM ND1  ND2R5A  -0.040  ALPHA -1.522  THOLE 1.114 
+ATOM HD1  HDP1A    0.256 
+ATOM CG   CD2R5A  -0.252  ALPHA -1.272  THOLE 1.190 
+ATOM CE1  CD2R5B   0.064  ALPHA -1.493  THOLE 1.297 
+ATOM HE1  HDR5B   -0.018 
+ATOM NE2  ND2R5B   0.000  ALPHA -1.146  THOLE 0.816 
+ATOM LPE2 LPD     -0.365 
+ATOM CD2  CD2R5A   0.141  ALPHA -1.515  THOLE 1.190 
+ATOM HD2  HDR5A    0.041 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   ND1       ND1  CE1       CE1  NE2 
+BOND NE2  CD2       CD2  CG 
+BOND ND1  HD1       CE1  HE1       CD2  HD2 
+BOND O    LPOA      O    LPOB 
+BOND NE2  LPE2 
+ 
+IMPH ND1 CG  CE1 HD1   CD2 CG NE2 HD2   CE1  ND1  NE2  HE1 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+LONEPAIR bisector LPE2 NE2 CE1 CD2  distance 0.35 angle 179.99 dihe 179.99 
+ANISOTROPY        NE2 LPE2 CE1 CD2  A11 0.808   A22 1.384 
+ 
+DONOR HN N 
+DONOR HD1 ND1 
+ACCEPTOR NE2 
+ACCEPTOR O C 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3475 123.2700  180.0000 115.2100  0.9988 
+IC -C   N    CA   C     1.3475 123.2700  180.0000 107.7000  1.5166 
+IC N    CA   C    +N    1.4521 107.7000  180.0000 117.5700  1.3509 
+IC +N   CA   *C   O     1.3509 117.5700  180.0000 120.2400  1.2273 
+IC CA   C    +N   +CA   1.5166 117.5700  180.0000 123.7200  1.4545 
+IC N    C    *CA  CB    1.4521 107.7000  122.4600 109.9900  1.5519 
+IC N    C    *CA  HA    1.4521 107.7000 -117.4900 107.3700  1.0830 
+IC N    CA   CB   CG    1.4521 112.1200  180.0000 114.0500  1.5041 
+IC CG   CA   *CB  HB1   1.5041 114.0500  121.1700 109.0100  1.1118 
+IC CG   CA   *CB  HB2   1.5041 114.0500 -122.3600 109.5300  1.1121 
+IC CA   CB   CG   ND1   1.5519 114.0500   90.0000 124.1000  1.3783 
+IC ND1  CB   *CG  CD2   1.3783 124.1000 -171.2900 129.6000  1.3597 
+IC CB   CG   ND1  CE1   1.5041 124.1000 -173.2100 107.0300  1.3549 
+IC CB   CG   CD2  NE2   1.5041 129.6000  171.9900 110.0300  1.3817 
+IC NE2  ND1  *CE1 HE1   1.3166 111.6300 -179.6300 123.8900  1.0932 
+IC CE1  CG   *ND1 HD1   1.3549 107.0300 -174.6500 126.2600  1.0005 
+IC NE2  CG   *CD2 HD2   1.3817 110.0300 -177.8500 129.6300  1.0834 
+ 
+RESI HSE           0.000 ! neutral HIS, proton on NE2, see patch HS2 below 
+! 
+!     |                 HE1 
+!  HN-N                 / 
+!     |   HB1    ND1--CE1 
+!     |   |     /      || 
+!  HA-CA--CB--CG       || 
+!     |   |     \\     || 
+!     |   HB2    CD2--NE2 
+!   O=C           |      \ 
+!     |          HD2     HE2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A    0.017  ALPHA -1.739  THOLE 0.399 !charge adjusted 
+ATOM HB1  HDA2A    0.078 
+ATOM HB2  HDA2A    0.078 
+ATOM ND1  ND2R5B   0.000  ALPHA -1.146  THOLE 0.816 
+ATOM LPD1 LPD     -0.365 
+ATOM NE2  ND2R5A  -0.040  ALPHA -1.522  THOLE 1.114 
+ATOM HE2  HDP1A    0.256 
+ATOM CG   CD2R5A  -0.252  ALPHA -1.272  THOLE 1.190 
+ATOM CE1  CD2R5B   0.064  ALPHA -1.493  THOLE 1.297 
+ATOM HE1  HDR5B   -0.018 
+ATOM CD2  CD2R5A   0.141  ALPHA -1.515  THOLE 1.190 
+ATOM HD2  HDR5A    0.041 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   ND1       ND1  CE1       CE1  NE2 
+BOND NE2  CD2       CD2  CG 
+BOND NE2  HE2       CE1  HE1       CD2  HD2 
+BOND O    LPOA      O    LPOB 
+BOND ND1  LPD1 
+ 
+IMPH NE2  CD2  CE1  HE2       CD2  CG   NE2  HD2       CE1  ND1  NE2  HE1 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+LONEPAIR bisector LPD1 ND1 CE1 CG   distance 0.35 angle 179.99 dihe 179.99 
+ANISOTROPY        ND1 LPD1 CE1 CG   A11 0.808   A22 1.384 
+ 
+DONOR HN N 
+DONOR HE2 NE2 
+ACCEPTOR ND1 
+ACCEPTOR O C 
+ 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3472 124.1600  180.0000 114.3600  0.9991 
+IC -C   N    CA   C     1.3472 124.1600  180.0000 106.4300  1.5166 
+IC N    CA   C    +N    1.4532 106.4300  180.0000 116.9700  1.3446 
+IC +N   CA   *C   O     1.3446 116.9700  180.0000 120.6800  1.2290 
+IC CA   C    +N   +CA   1.5166 116.9700  180.0000 124.9500  1.4505 
+IC N    C    *CA  CB    1.4532 106.4300  123.5200 111.6700  1.5578 
+IC N    C    *CA  HA    1.4532 106.4300 -116.4900 107.0800  1.0833 
+IC N    CA   CB   CG    1.4532 112.8200  180.0000 116.9400  1.5109 
+IC CG   CA   *CB  HB1   1.5109 116.9400  119.8000 107.9100  1.1114 
+IC CG   CA   *CB  HB2   1.5109 116.9400 -124.0400 109.5000  1.1101 
+IC CA   CB   CG   ND1   1.5578 116.9400   90.0000 120.1700  1.3859 
+IC ND1  CB   *CG  CD2   1.3859 120.1700 -178.2600 129.7100  1.3596 
+IC CB   CG   ND1  CE1   1.5109 120.1700 -179.2000 105.2000  1.3170 
+IC CB   CG   CD2  NE2   1.5109 129.7100  178.6600 105.8000  1.3782 
+IC NE2  ND1  *CE1 HE1   1.3539 111.7600  179.6900 124.5800  1.0929 
+IC CE1  CD2  *NE2 HE2   1.3539 107.1500 -178.6900 125.8600  0.9996 
+IC NE2  CG   *CD2 HD2   1.3782 105.8000 -179.3500 129.8900  1.0809 
+ 
+RESI HSP           1.000 ! protonated HIS 
+! 
+!     |        HD1      HE1 
+!  HN-N          \      / 
+!     |   HB1    ND1--CE1 
+!     |   |     /      || 
+!  HA-CA--CB--CG       || 
+!     |   |     \\     || 
+!     |   HB2    CD2--NE2 
+!   O=C           |      \ 
+!     |          HD2     HE2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+!electrostatic terms need to be refit to methylimidazolium 
+ATOM CB   CD32A    0.017  ALPHA -1.739  THOLE 0.399 !from HSE/HSD 
+ATOM HB1  HDA2A    0.078 !from HSD/HSE 
+ATOM HB2  HDA2A    0.078 !from HSD/HSE 
+ATOM ND1  ND2R5C  -0.171  ALPHA -1.260  THOLE 1.194 
+ATOM HD1  HDP1A    0.340 
+ATOM NE2  ND2R5C  -0.171  ALPHA -1.260  THOLE 1.194 
+ATOM HE2  HDP1A    0.340 
+ATOM CG   CD2R5D  -0.012  ALPHA -1.522  THOLE 1.196 
+ATOM CE1  CD2R5E   0.170  ALPHA -1.500  THOLE 1.317 
+ATOM HE1  HDR5E    0.170 
+ATOM CD2  CD2R5D  -0.012  ALPHA -1.522  THOLE 1.196 
+ATOM HD2  HDR5D    0.173 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   ND1       ND1  CE1       CE1  NE2 
+BOND NE2  CD2       CD2  CG 
+BOND ND1  HD1       CE1  HE1       CD2  HD2       NE2  HE2 
+BOND O    LPOA      O    LPOB 
+ 
+!impropers need to be checked 
+IMPR ND1  CE1  CG   HD1       NE2  CE1 CD2  HE2 
+IMPR CE1  ND1  NE2  HE1       CD2  CG  NE2  HD2   !CG   CD2 ND1  CB is this needed: check with methylimidazolium 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+DONOR HD1 ND1 
+DONOR HE2 NE2 
+ACCEPTOR O C 
+ 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3489 123.9300  180.0000 118.8000  1.0041 
+IC -C   N    CA   C     1.3489 123.9300  180.0000 112.0300  1.5225 
+IC N    CA   C    +N    1.4548 112.0300  180.0000 116.4900  1.3464 
+IC +N   CA   *C   O     1.3464 116.4900  180.0000 121.2000  1.2284 
+IC CA   C    +N   +CA   1.5225 116.4900  180.0000 124.2400  1.4521 
+IC N    C    *CA  CB    1.4548 112.0300  125.1300 109.3800  1.5533 
+IC N    C    *CA  HA    1.4548 112.0300 -119.2000 106.7200  1.0832 
+IC N    CA   CB   CG    1.4548 112.2500  180.0000 114.1800  1.5168 
+IC CG   CA   *CB  HB1   1.5168 114.1800  122.5000 108.9900  1.1116 
+IC CG   CA   *CB  HB2   1.5168 114.1800 -121.5100 108.9700  1.1132 
+IC CA   CB   CG   ND1   1.5533 114.1800   90.0000 122.9400  1.3718 
+IC ND1  CB   *CG  CD2   1.3718 122.9400 -165.2600 128.9300  1.3549 
+IC CB   CG   ND1  CE1   1.5168 122.9400 -167.6200 108.9000  1.3262 
+IC CB   CG   CD2  NE2   1.5168 128.9300  167.1300 106.9300  1.3727 
+IC NE2  ND1  *CE1 HE1   1.3256 108.5000  178.3900 125.7600  1.0799 
+IC CE1  CD2  *NE2 HE2   1.3256 108.8200 -172.9400 125.5200  1.0020 
+IC CE1  CG   *ND1 HD1   1.3262 108.9000  171.4900 126.0900  1.0018 
+IC NE2  CG   *CD2 HD2   1.3727 106.9300 -174.4900 128.4100  1.0867 
+ 
+RESI ILE           0.000 !nomenclature of CD changed to CD1 to conform to PDB standard 
+! 
+!     |    HG21 HG22 
+!  HN-N      | / 
+!     |     CG2--HG23 
+!     |    / 
+!  HA-CA--CB-HB    HD11 
+!     |    \       / 
+!     |     CG1--CD1--HD12 
+!   O=C    / \     \ 
+!     | HG11 HG12  HD13 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD31A   -0.095  ALPHA -1.302  THOLE 1.3 
+ATOM HB   HDA1A    0.095 
+GROUP 
+ATOM CG2  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HG21 HDA3A    0.059 
+ATOM HG22 HDA3A    0.059 
+ATOM HG23 HDA3A    0.059 
+GROUP 
+ATOM CG1  CD32A   -0.156  ALPHA -1.660  THOLE 1.3 
+ATOM HG11 HDA2A    0.078 
+ATOM HG12 HDA2A    0.078 
+GROUP 
+ATOM CD1  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HD11 HDA3A    0.059 
+ATOM HD12 HDA3A    0.059 
+ATOM HD13 HDA3A    0.059 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB 
+BOND CB   CG1       CG1  HG11      CG1  HG12 
+BOND CB   CG2       CG2  HG21      CG2  HG22      CG2  HG23 
+BOND CG1  CD1       CD1  HD11      CD1  HD12      CD1  HD13 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3470 124.1600  180.0000 114.1900  0.9978 
+IC -C   N    CA   C     1.3470 124.1600  180.0000 106.3500  1.5190 
+IC N    CA   C    +N    1.4542 106.3500  180.0000 117.9700  1.3465 
+IC +N   CA   *C   O     1.3465 117.9700  180.0000 120.5900  1.2300 
+IC CA   C    +N   +CA   1.5190 117.9700  180.0000 124.2100  1.4467 
+IC N    C    *CA  CB    1.4542 106.3500  124.2200 112.9300  1.5681 
+IC N    C    *CA  HA    1.4542 106.3500 -115.6300 106.8100  1.0826 
+IC N    CA   CB   CG1   1.4542 112.7900  180.0000 113.6300  1.5498 
+IC CG1  CA   *CB  HB    1.5498 113.6300  114.5500 104.4800  1.1195 
+IC CG1  CA   *CB  CG2   1.5498 113.6300 -130.0400 113.9300  1.5452 
+IC CA   CB   CG2  HG21  1.5681 113.9300 -171.3000 110.6100  1.1100 
+IC HG21 CB   *CG2 HG22  1.1100 110.6100  119.3500 110.9000  1.1102 
+IC HG21 CB   *CG2 HG23  1.1100 110.6100 -120.0900 110.9700  1.1105 
+IC CA   CB   CG1  CD1   1.5681 113.6300  180.0000 114.0900  1.5381 
+IC CD1  CB   *CG1 HG11  1.5381 114.0900  122.3600 109.7800  1.1130 
+IC CD1  CB   *CG1 HG12  1.5381 114.0900 -120.5900 108.8900  1.1141 
+IC CB   CG1  CD1  HD11  1.5498 114.0900 -176.7800 110.3100  1.1115 
+IC HD11 CG1  *CD1 HD12  1.1115 110.3100  119.7500 110.6500  1.1113 
+IC HD11 CG1  *CD1 HD13  1.1115 110.3100 -119.7000 111.0200  1.1103 
+ 
+RESI LEU           0.000 
+! 
+!     |        HD11 HD12 
+!  HN-N          | / 
+!     |   HB1   CD1--HD13 
+!     |   |    / 
+!  HA-CA--CB--CG-HG 
+!     |   |    \ 
+!     |   HB2   CD2--HD23 
+!   O=C          | \ 
+!     |        HD21 HD22 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD31A   -0.095  ALPHA -1.302  THOLE 1.3 
+ATOM HG   HDA1A    0.095 
+GROUP 
+ATOM CD1  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HD11 HDA3A    0.059 
+ATOM HD12 HDA3A    0.059 
+ATOM HD13 HDA3A    0.059 
+GROUP 
+ATOM CD2  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HD21 HDA3A    0.059 
+ATOM HD22 HDA3A    0.059 
+ATOM HD23 HDA3A    0.059 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG 
+BOND CG   CD1       CD1  HD11      CD1  HD12      CD1  HD13 
+BOND CG   CD2       CD2  HD21      CD2  HD22      CD2  HD23 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3474 124.3100  180.0000 114.2600  0.9979 
+IC -C   N    CA   C     1.3474 124.3100  180.0000 106.0500  1.5184 
+IC N    CA   C    +N    1.4508 106.0500  180.0000 117.9300  1.3463 
+IC +N   CA   *C   O     1.3463 117.9300  180.0000 120.5600  1.2299 
+IC CA   C    +N   +CA   1.5184 117.9300  180.0000 124.2600  1.4467 
+IC N    C    *CA  CB    1.4508 106.0500  121.5200 112.1200  1.5543 
+IC N    C    *CA  HA    1.4508 106.0500 -116.5000 107.5700  1.0824 
+IC N    CA   CB   CG    1.4508 111.1900  180.0000 117.4600  1.5472 
+IC CG   CA   *CB  HB1   1.5472 117.4600  120.9800 107.1700  1.1145 
+IC CG   CA   *CB  HB2   1.5472 117.4600 -124.6700 108.9800  1.1126 
+IC CA   CB   CG   CD1   1.5543 117.4600  180.0000 110.4800  1.5361 
+IC CD1  CB   *CG  CD2   1.5361 110.4800  120.0000 112.5700  1.5360 
+IC CD1  CD2  *CG  HG    1.5361 110.2600  120.0000 108.0200  1.1168 
+IC CB   CG   CD1  HD11  1.5472 110.4800  177.3300 110.5400  1.1111 
+IC HD11 CG   *CD1 HD12  1.1111 110.5400  119.9600 110.6200  1.1112 
+IC HD11 CG   *CD1 HD13  1.1111 110.5400 -119.8500 110.6900  1.1108 
+IC CB   CG   CD2  HD21  1.5472 112.5700  178.9600 110.3200  1.1116 
+IC HD21 CG   *CD2 HD22  1.1116 110.3200  119.7100 111.6900  1.1086 
+IC HD21 CG   *CD2 HD23  1.1116 110.3200 -119.6100 110.4900  1.1115 
+ 
+RESI LYS           1.000 ! lysine 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 HG1 HD1 HE1    HZ1 
+!     |   |   |   |   |     / 
+!  HA-CA--CB--CG--CD--CE--NZ--HZ2 
+!     |   |   |   |   |     \ 
+!     |   HB2 HG2 HD2 HE2    HZ3 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD32A   -0.156  ALPHA -1.660  THOLE 1.3 
+ATOM HG1  HDA2A    0.078 
+ATOM HG2  HDA2A    0.078 
+GROUP 
+ATOM CD   CD32A   -0.156  ALPHA -1.660  THOLE 1.3 
+ATOM HD1  HDA2A    0.078 
+ATOM HD2  HDA2A    0.078 
+GROUP 
+ATOM CE   CD32A    0.043 ALPHA -1.656 THOLE 0.895 
+ATOM HE1  HDA2C    0.143 
+ATOM HE2  HDA2C    0.143 
+ATOM NZ   ND3P3A  -0.349 ALPHA -1.298 THOLE 0.895 
+ATOM HZ1  HDP1B    0.340 
+ATOM HZ2  HDP1B    0.340 
+ATOM HZ3  HDP1B    0.340 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   CD        CD   HD1       CD   HD2 
+BOND CD   CE        CE   HE1       CE   HE2 
+BOND CE   NZ        NZ   HZ1       NZ   HZ2       NZ   HZ3 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+DONOR HZ1 NZ 
+DONOR HZ2 NZ 
+DONOR HZ3 NZ 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3482 123.5700  180.0000 115.1100  0.9988 
+IC -C   N    CA   C     1.3482 123.5700  180.0000 107.2900  1.5187 
+IC N    CA   C    +N    1.4504 107.2900  180.0000 117.2700  1.3478 
+IC +N   CA   *C   O     1.3478 117.2700  180.0000 120.7900  1.2277 
+IC CA   C    +N   +CA   1.5187 117.2700  180.0000 124.9100  1.4487 
+IC N    C    *CA  CB    1.4504 107.2900  122.2300 111.3600  1.5568 
+IC N    C    *CA  HA    1.4504 107.2900 -116.8800 107.3600  1.0833 
+IC N    CA   CB   CG    1.4504 111.4700  180.0000 115.7600  1.5435 
+IC CG   CA   *CB  HB1   1.5435 115.7600  120.9000 107.1100  1.1146 
+IC CG   CA   *CB  HB2   1.5435 115.7600 -124.4800 108.9900  1.1131 
+IC CA   CB   CG   CD    1.5568 115.7600  180.0000 113.2800  1.5397 
+IC CD   CB   *CG  HG1   1.5397 113.2800  120.7400 109.1000  1.1138 
+IC CD   CB   *CG  HG2   1.5397 113.2800 -122.3400 108.9900  1.1143 
+IC CB   CG   CD   CE    1.5435 113.2800  180.0000 112.3300  1.5350 
+IC CE   CG   *CD  HD1   1.5350 112.3300  122.2500 108.4100  1.1141 
+IC CE   CG   *CD  HD2   1.5350 112.3300 -121.5900 108.1300  1.1146 
+IC CG   CD   CE   NZ    1.5397 112.3300  180.0000 110.4600  1.4604 
+IC NZ   CD   *CE  HE1   1.4604 110.4600  119.9100 110.5100  1.1128 
+IC NZ   CD   *CE  HE2   1.4604 110.4600 -120.0200 110.5700  1.1123 
+IC CD   CE   NZ   HZ1   1.5350 110.4600  179.9200 110.0200  1.0404 
+IC HZ1  CE   *NZ  HZ2   1.0404 110.0200  120.2700 109.5000  1.0402 
+IC HZ1  CE   *NZ  HZ3   1.0404 110.0200 -120.1300 109.4000  1.0401 
+ 
+RESI MET           0.000 ! methionine 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 HG1     HE1 
+!     |   |   |       | 
+!  HA-CA--CB--CG--SD--CE--HE3 
+!     |   |   |       | 
+!     |   HB2 HG2     HE2 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.066  ALPHA -1.804  THOLE 2.080 
+ATOM HB1  HDA2A    0.033 
+ATOM HB2  HDA2A    0.033 
+GROUP 
+ATOM CG   CD32A   -0.041  ALPHA -1.300  THOLE 1.646 
+ATOM HG1  HDA2A    0.082 
+ATOM HG2  HDA2A    0.082 
+ATOM SD   SD30A    0.000  ALPHA -2.051  THOLE 1.543 
+ATOM CE   CD33A   -0.161  ALPHA -1.587  THOLE 1.542 
+ATOM HE1  HDA3A    0.082 
+ATOM HE2  HDA3A    0.082 
+ATOM HE3  HDA3A    0.082 
+ATOM LP1A LPD     -0.104 
+ATOM LP1B LPD     -0.104 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   SD 
+BOND SD   CE        CE   HE1       CE   HE2       CE   HE3 
+BOND O    LPOA      O    LPOB 
+BOND SD   LP1A      SD   LP1B 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR bisector LP1A SD CE CG distance 0.70 angle  95.0 dihe 100.0 
+LONEPAIR bisector LP1B SD CG CE distance 0.70 angle  95.0 dihe 100.0 
+ANISOTROPY SD CE LP1A LP1B A11 0.7808 A22 1.3662 
+ 
+DONOR HN N 
+ACCEPTOR SD 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3478 124.2100  180.0000 114.3900  0.9978 
+IC -C   N    CA   C     1.3478 124.2100  180.0000 106.3100  1.5195 
+IC N    CA   C    +N    1.4510 106.3100  180.0000 117.7400  1.3471 
+IC +N   CA   *C   O     1.3471 117.7400  180.0000 120.6400  1.2288 
+IC CA   C    +N   +CA   1.5195 117.7400  180.0000 124.5200  1.4471 
+IC N    C    *CA  CB    1.4510 106.3100  121.6200 111.8800  1.5546 
+IC N    C    *CA  HA    1.4510 106.3100 -116.9800 107.5700  1.0832 
+IC N    CA   CB   CG    1.4510 111.2500  180.0000 115.9200  1.5460 
+IC CG   CA   *CB  HB1   1.5460 115.9200  120.5600 106.9000  1.1153 
+IC CG   CA   *CB  HB2   1.5460 115.9200 -124.8000 109.3800  1.1129 
+IC CA   CB   CG   SD    1.5546 115.9200  180.0000 110.2800  1.8219 
+IC SD   CB   *CG  HG1   1.8219 110.2800  120.5000 110.3400  1.1106 
+IC SD   CB   *CG  HG2   1.8219 110.2800 -121.1600 109.6400  1.1119 
+IC CB   CG   SD   CE    1.5460 110.2800  180.0000  98.9400  1.8206 
+IC CG   SD   CE   HE1   1.8219  98.9400 -179.4200 110.9100  1.1111 
+IC HE1  SD   *CE  HE2   1.1111 110.9100  119.9500 111.0300  1.1115 
+IC HE1  SD   *CE  HE3   1.1111 110.9100 -119.9500 111.0900  1.1112 
+ 
+RESI PHE           0.000 
+! 
+!     |        HD1  HE1 
+!  HN-N         |    | 
+!     |   HB1  CD1--CE1 
+!     |   |    //     \\ 
+!  HA-CA--CB--CG      CZ--HZ 
+!     |   |    \  __  / 
+!     |   HB2  CD2--CE2 
+!   O=C         |    | 
+!     |        HD2  HE2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.150  ALPHA -1.608  THOLE 0.438 
+ATOM HB1  HDA2A    0.079 
+ATOM HB2  HDA2A    0.079 
+ATOM CG   CD2R6A   0.037  ALPHA -1.550  THOLE 1.262 
+ATOM CD1  CD2R6A  -0.087  ALPHA -1.604  THOLE 1.262 
+ATOM HD1  HDR6A    0.099 
+ATOM CD2  CD2R6A  -0.087  ALPHA -1.604  THOLE 1.262 
+ATOM HD2  HDR6A    0.099 
+ATOM CE1  CD2R6A  -0.114  ALPHA -1.606  THOLE 1.262 
+ATOM HE1  HDR6A    0.096 
+ATOM CE2  CD2R6A  -0.114  ALPHA -1.606  THOLE 1.262 
+ATOM HE2  HDR6A    0.096 
+ATOM CZ   CD2R6A  -0.133  ALPHA -1.610  THOLE 1.262 
+ATOM HZ   HDR6A    0.100 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   CD1       CD1  CE1       CE1  CZ 
+BOND CG   CD2       CD2  CE2       CE2  CZ 
+BOND CD1  HD1       CD2   HD2      CE1  HE1 
+BOND CE2  HE2       CZ    HZ 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3476 123.8900  180.0000 114.4700  0.9987 
+IC -C   N    CA   C     1.3476 123.8900  180.0000 106.3800  1.5229 
+IC N    CA   C    +N    1.4504 106.3800  180.0000 117.6500  1.3483 
+IC +N   CA   *C   O     1.3483 117.6500  180.0000 120.4900  1.2287 
+IC CA   C    +N   +CA   1.5229 117.6500  180.0000 124.1000  1.4523 
+IC N    C    *CA  CB    1.4504 106.3800  122.4900 112.4500  1.5594 
+IC N    C    *CA  HA    1.4504 106.3800 -115.6300 107.0500  1.0832 
+IC N    CA   CB   CG    1.4504 111.6300  180.0000 112.7600  1.5109 
+IC CG   CA   *CB  HB1   1.5109 112.7600  118.2700 109.1000  1.1119 
+IC CG   CA   *CB  HB2   1.5109 112.7600 -123.8300 111.1100  1.1113 
+IC CA   CB   CG   CD1   1.5594 112.7600   90.0000 120.3200  1.4059 
+IC CD1  CB   *CG  CD2   1.4059 120.3200 -177.9600 120.7600  1.4062 
+IC CB   CG   CD1  CE1   1.5109 120.3200 -177.3700 120.6300  1.4006 
+IC CE1  CG   *CD1 HD1   1.4006 120.6300  179.7000 119.6500  1.0814 
+IC CB   CG   CD2  CE2   1.5109 120.7600  177.2000 120.6200  1.4002 
+IC CE2  CG   *CD2 HD2   1.4002 120.6200 -178.6900 119.9900  1.0811 
+IC CG   CD1  CE1  CZ    1.4059 120.6300   -0.1200 119.9300  1.4004 
+IC CZ   CD1  *CE1 HE1   1.4004 119.9300 -179.6900 120.0100  1.0808 
+IC CZ   CD2  *CE2 HE2   1.4000 119.9600 -179.9300 119.8700  1.0811 
+IC CE1  CE2  *CZ  HZ    1.4004 119.9800  179.5100 119.9700  1.0807 
+ 
+RESI PRO           0.000 ! Proline 
+! 
+! 
+!       HD1 HD2 
+!     |   \ / 
+!     N---CD   HG1 
+!     |     \  / 
+!     |      CG 
+!     |     /  \ 
+!  HA-CA--CB   HG2 
+!     |   / \ 
+!     | HB1 HB2 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND3A3   -0.203  ALPHA -1.113  THOLE 2.078 
+ATOM CA   CD31C   -0.047  ALPHA -1.807  THOLE 0.622 
+ATOM HA   HDA1A    0.016 
+ATOM CD   CD32A   -0.033  ALPHA -1.442  THOLE 0.626 
+ATOM HD1  HDA2A    0.092 
+ATOM HD2  HDA2A    0.092 
+ATOM CB   CD32A   -0.115  ALPHA -1.378  THOLE 0.483 
+ATOM HB1  HDA2A    0.136 
+ATOM HB2  HDA2A    0.136 
+ATOM CG   CD32A   -0.414  ALPHA -2.066  THOLE 0.644 
+ATOM HG1  HDA2A    0.142 
+ATOM HG2  HDA2A    0.142 
+ATOM C    CD2O1A   0.595  ALPHA -0.829  THOLE 1.512 
+ATOM O    OD2C1A   0.000  ALPHA -0.540  THOLE 1.282 
+ATOM LPOA LPDO1   -0.314 
+ATOM LPOB LPDO1   -0.225 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   HG1       CG   HG2 
+BOND CG   CD        CD   HD1       CD   HD2 
+BOND CD   N 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA CD 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   CD    1.3366 122.9400  178.5100 112.7500  1.4624 
+IC -C   N    CA   C     1.3366 122.9400  -76.1200 110.8600  1.5399 
+IC N    CA   C    +N    1.4585 110.8600  180.0000 114.7500  1.3569 
+IC +N   CA   *C   O     1.3569 114.7500  177.1500 120.4600  1.2316 
+IC CA   C    +N   +CA   1.5399 116.1200  180.0000 124.8900  1.4517 
+IC N    C    *CA  CB    1.4585 110.8600  113.7400 111.7400  1.5399 
+IC N    C    *CA  HA    1.4585 110.8600 -122.4000 109.0900  1.0837 
+IC N    CA   CB   CG    1.4585 102.5600   31.6100 104.3900  1.5322 
+IC CA   CB   CG   CD    1.5399 104.3900  -34.5900 103.2100  1.5317 
+IC N    CA   CB   HB1   1.4585 102.5600  -84.9400 109.0200  1.1131 
+IC N    CA   CB   HB2   1.4585 102.5600  153.9300 112.7400  1.1088 
+IC CA   CB   CG   HG1   1.5399 104.3900 -156.7200 112.9500  1.1077 
+IC CA   CB   CG   HG2   1.5399 104.3900   81.2600 109.2200  1.1143 
+IC CB   CG   CD   HD1   1.5322 103.2100  -93.5500 110.0300  1.1137 
+IC CB   CG   CD   HD2   1.5322 103.2100  144.5200 110.0000  1.1144 
+PATCHING FIRS PROP 
+ 
+RESI SER           0.000 
+! 
+!     | 
+!  HN-N 
+!     |   HB1 
+!     |   | 
+!  HA-CA--CB--OG 
+!     |   |     \ 
+!     |   HB2    HG1 
+!   O=C 
+!     | 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.060  ALPHA -1.000  THOLE 1.3 
+ATOM HB1  HDA2A    0.080 
+ATOM HB2  HDA2A    0.080 
+ATOM OG   OD31A    0.000  ALPHA -1.028  THOLE 1.3 
+ATOM HG1  HDP1A    0.360 
+ATOM LPGA LPD     -0.230 
+ATOM LPGB LPD     -0.230 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   OG        OG   HG1 
+BOND O    LPOA      O    LPOB 
+BOND OG   LPGA      OG   LPGB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LPGA OG CB HG1 distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPGB OG CB HG1 distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OG CB LPGA LPGB A11 0.8108 A22 1.2162 
+ 
+DONOR HN N 
+DONOR HG1 OG 
+ACCEPTOR OG 
+ACCEPTOR O C 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3474 124.3700  180.0000 114.1800  0.9999 
+IC -C   N    CA   C     1.3474 124.3700  180.0000 105.8100  1.5166 
+IC N    CA   C    +N    1.4579 105.8100  180.0000 117.7200  1.3448 
+IC +N   CA   *C   O     1.3448 117.7200  180.0000 120.2500  1.2290 
+IC CA   C    +N   +CA   1.5166 117.7200  180.0000 124.6300  1.4529 
+IC N    C    *CA  CB    1.4579 105.8100  124.7500 111.4000  1.5585 
+IC N    C    *CA  HA    1.4579 105.8100 -115.5600 107.3000  1.0821 
+IC N    CA   CB   OG    1.4579 114.2800  180.0000 112.4500  1.4341 
+IC OG   CA   *CB  HB1   1.4341 112.4500  119.3200 108.1000  1.1140 
+IC OG   CA   *CB  HB2   1.4341 112.4500 -123.8600 110.3800  1.1136 
+IC CA   CB   OG   HG1   1.5585 112.4500  165.9600 107.0800  0.9655 
+ 
+RESI THR           0.000 
+! 
+!     | 
+!  HN-N 
+!     |     OG1--HG1 
+!     |    / 
+!  HA-CA--CB-HB 
+!     |    \ 
+!     |     CG2--HG21 
+!   O=C    / \ 
+!     | HG21 HG22 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD31A    0.000  ALPHA -1.000  THOLE 1.3 
+ATOM HB   HDA1A    0.100 
+ATOM OG1  OD31A    0.000  ALPHA -1.028  THOLE 1.3 
+ATOM HG1  HDP1A    0.360 
+ATOM LPGA LPD     -0.230 
+ATOM LPGB LPD     -0.230 
+GROUP 
+ATOM CG2  CD33A   -0.180  ALPHA -1.400  THOLE 1.3 
+ATOM HG21 HDA3A    0.060 
+ATOM HG22 HDA3A    0.060 
+ATOM HG23 HDA3A    0.060 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB 
+BOND CB   OG1       OG1  HG1 
+BOND CB   CG2       CG2  HG21      CG2  HG22      CG2  HG23 
+BOND O    LPOA      O    LPOB 
+BOND OG1  LPGA      OG1  LPGB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LPGA OG1 CB HG1 distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPGB OG1 CB HG1 distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OG1 CB LPGA LPGB A11 0.8108 A22 1.2162 
+ 
+DONOR HN N 
+DONOR HG1 OG1 
+ACCEPTOR OG1 
+ACCEPTOR O C 
+!C22 IC table 
+IC -C   CA   *N   HN    1.3471 124.1200  180.0000 114.2600  0.9995 
+IC -C   N    CA   C     1.3471 124.1200  180.0000 106.0900  1.5162 
+IC N    CA   C    +N    1.4607 106.0900  180.0000 117.6900  1.3449 
+IC +N   CA   *C   O     1.3449 117.6900  180.0000 120.3000  1.2294 
+IC CA   C    +N   +CA   1.5162 117.6900  180.0000 124.6600  1.4525 
+IC N    C    *CA  CB    1.4607 106.0900  126.4600 112.7400  1.5693 
+IC N    C    *CA  HA    1.4607 106.0900 -114.9200 106.5300  1.0817 
+IC N    CA   CB   OG1   1.4607 114.8100  180.0000 112.1600  1.4252 
+IC OG1  CA   *CB  HB    1.4252 112.1600  116.3900 106.1100  1.1174 
+IC OG1  CA   *CB  CG2   1.4252 112.1600 -124.1300 115.9100  1.5324 
+IC CA   CB   OG1  HG1   1.5693 112.1600 -179.2800 105.4500  0.9633 
+IC CA   CB   CG2  HG21  1.5693 115.9100 -173.6500 110.8500  1.1104 
+IC HG21 CB   *CG2 HG22  1.1104 110.8500  119.5100 110.4100  1.1109 
+IC HG21 CB   *CG2 HG23  1.1104 110.8500 -120.3900 111.1100  1.1113 
+ 
+RESI TRP           0.000 
+! 
+!     |                  HE3 
+!  HN-N                   | 
+!     |   HB1            CE3 
+!     |   |             /  \\ 
+!  HA-CA--CB---CG-----CD2   CZ3-HZ3 
+!     |   |    ||     ||     | 
+!     |   HB2  CD1    CE2   CH2-HH2 
+!   O=C       /   \   / \  // 
+!     |     HD1    NE1   CZ2 
+!                   |     | 
+!                  HE1   HZ2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.046  ALPHA -2.044  THOLE 1.346 !adjusted to neutralize group 
+ATOM HB1  HDA2A    0.045 
+ATOM HB2  HDA2A    0.045 
+ATOM CG   CD2R5C  -0.098  ALPHA -1.269  THOLE 1.346 
+ATOM CD1  CD2R5A   0.059  ALPHA -1.612  THOLE 1.265 
+ATOM HD1  HDR5A    0.083 
+ATOM NE1  ND2R5A  -0.276  ALPHA -1.380  THOLE 1.146 
+ATOM HE1  HDP1A    0.294 
+ATOM CE2  CD2R6D   0.053  ALPHA -1.267  THOLE 1.009 
+ATOM CD2  CD2R6D  -0.099  ALPHA -1.266  THOLE 1.344 
+ATOM CE3  CD2R6A  -0.034  ALPHA -1.622  THOLE 1.300 
+ATOM HE3  HDR6A    0.094 
+ATOM CZ3  CD2R6A  -0.154  ALPHA -1.617  THOLE 1.300 
+ATOM HZ3  HDR6A    0.087 
+ATOM CZ2  CD2R6A  -0.115  ALPHA -1.611  THOLE 1.300 
+ATOM HZ2  HDR6A    0.110 
+ATOM CH2  CD2R6A  -0.188  ALPHA -1.621  THOLE 1.300 
+ATOM HH2  HDR6A    0.140 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   CD1       CD1  NE1       NE1  CE2 
+BOND CE2  CD2       CD2  CG        CD2  CE3       CE3  CZ3 
+BOND CZ3  CH2       CH2  CZ2       CZ2  CE2 
+BOND CD1  HD1       NE1  HE1       CE3  HE3       CZ3  HZ3 
+BOND CH2  HH2       CZ2  HZ2 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+DONOR HE1 NE1 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3482 123.5100  180.0000 115.0200  0.9972 
+IC -C   N    CA   C     1.3482 123.5100  180.0000 107.6900  1.5202 
+IC N    CA   C    +N    1.4507 107.6900  180.0000 117.5700  1.3505 
+IC +N   CA   *C   O     1.3505 117.5700  180.0000 121.0800  1.2304 
+IC CA   C    +N   +CA   1.5202 117.5700  180.0000 124.8800  1.4526 
+IC N    C    *CA  CB    1.4507 107.6900  122.6800 111.2300  1.5560 
+IC N    C    *CA  HA    1.4507 107.6900 -117.0200 106.9200  1.0835 
+IC N    CA   CB   CG    1.4507 111.6800  180.0000 115.1400  1.5233 
+IC CG   CA   *CB  HB1   1.5233 115.1400  119.1700 107.8400  1.1127 
+IC CG   CA   *CB  HB2   1.5233 115.1400 -124.7300 109.8700  1.1118 
+IC CA   CB   CG   CD2   1.5560 115.1400   90.0000 123.9500  1.4407 
+IC CD2  CB   *CG  CD1   1.4407 123.9500 -172.8100 129.1800  1.3679 
+IC CD1  CG   CD2  CE2   1.3679 106.5700   -0.0800 106.6500  1.4126 
+IC CG   CD2  CE2  NE1   1.4407 106.6500    0.1400 107.8700  1.3746 
+IC CE2  CG   *CD2 CE3   1.4126 106.6500  179.2100 132.5400  1.4011 
+IC CE2  CD2  CE3  CZ3   1.4126 120.8000   -0.2000 118.1600  1.4017 
+IC CD2  CE3  CZ3  CH2   1.4011 118.1600    0.1000 120.9700  1.4019 
+IC CE3  CZ3  CH2  CZ2   1.4017 120.9700    0.0100 120.8700  1.4030 
+IC CZ3  CD2  *CE3 HE3   1.4017 118.1600 -179.6200 121.8400  1.0815 
+IC CH2  CE3  *CZ3 HZ3   1.4019 120.9700 -179.8200 119.4500  1.0811 
+IC CZ2  CZ3  *CH2 HH2   1.4030 120.8700 -179.9200 119.5700  1.0811 
+IC CE2  CH2  *CZ2 HZ2   1.3939 118.4200  179.8700 120.0800  1.0790 
+IC CD1  CE2  *NE1 HE1   1.3752 108.8100  177.7800 124.6800  0.9767 
+IC CG   NE1  *CD1 HD1   1.3679 110.1000  178.1000 125.4300  1.0820 
+ 
+RESI TYR           0.000 
+! 
+!     |        HD1  HE1 
+!  HN-N         |    | 
+!     |   HB1  CD1--CE1 
+!     |   |    //     \\ 
+!  HA-CA--CB--CG      CZ--OH 
+!     |   |    \  __  /     \ 
+!     |   HB2  CD2--CE2      HH 
+!   O=C         |    | 
+!     |        HD2  HE2 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD32A   -0.192  ALPHA -1.802  THOLE 0.148 
+ATOM HB1  HDA2A    0.075 
+ATOM HB2  HDA2A    0.075 
+ATOM CG   CD2R6A   0.086  ALPHA -1.418  THOLE 1.270 
+ATOM CD1  CD2R6A  -0.202  ALPHA -1.427  THOLE 1.270 
+ATOM HD1  HDR6A    0.118 
+ATOM CD2  CD2R6A  -0.202  ALPHA -1.427  THOLE 1.270 
+ATOM HD2  HDR6A    0.118 
+ATOM CE1  CD2R6A  -0.136  ALPHA -1.444  THOLE 1.270 
+ATOM HE1  HDR6A    0.123 
+ATOM CE2  CD2R6A  -0.136  ALPHA -1.444  THOLE 1.270 
+ATOM HE2  HDR6A    0.123 
+ATOM CZ   CD2R6A   0.297  ALPHA -1.174  THOLE 1.270 
+ATOM OH   OD31C    0.000  ALPHA -0.683  THOLE 0.601 
+ATOM HH   HDP1A    0.319 
+ATOM LP1A LPD     -0.233 
+ATOM LP1B LPD     -0.233 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB1       CB   HB2 
+BOND CB   CG        CG   CD1       CD1  CE1       CE1  CZ 
+BOND CG   CD2       CD2  CE2       CE2  CZ 
+BOND CD1  HD1       CD2   HD2      CE1  HE1 
+BOND CE2  HE2       CZ    OH       OH   HH 
+BOND O    LPOA      O    LPOB 
+BOND OH   LP1A      OH   LP1B 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+LONEPAIR relative LP1A OH CZ HH   distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LP1B OH CZ HH   distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OH CZ LP1A LP1B A11 0.8108 A22 1.2162 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3476 123.8100  180.0000 114.5400  0.9986 
+IC -C   N    CA   C     1.3476 123.8100  180.0000 106.5200  1.5232 
+IC N    CA   C    +N    1.4501 106.5200  180.0000 117.3300  1.3484 
+IC +N   CA   *C   O     1.3484 117.3300  180.0000 120.6700  1.2287 
+IC CA   C    +N   +CA   1.5232 117.3300  180.0000 124.3100  1.4513 
+IC N    C    *CA  CB    1.4501 106.5200  122.2700 112.3400  1.5606 
+IC N    C    *CA  HA    1.4501 106.5200 -116.0400 107.1500  1.0833 
+IC N    CA   CB   CG    1.4501 111.4300  180.0000 112.9400  1.5113 
+IC CG   CA   *CB  HB1   1.5113 112.9400  118.8900 109.1200  1.1119 
+IC CG   CA   *CB  HB2   1.5113 112.9400 -123.3600 110.7000  1.1115 
+IC CA   CB   CG   CD1   1.5606 112.9400   90.0000 120.4900  1.4064 
+IC CD1  CB   *CG  CD2   1.4064 120.4900 -176.4600 120.4600  1.4068 
+IC CB   CG   CD1  CE1   1.5113 120.4900 -175.4900 120.4000  1.4026 
+IC CE1  CG   *CD1 HD1   1.4026 120.4000  178.9400 119.8000  1.0814 
+IC CB   CG   CD2  CE2   1.5113 120.4600  175.3200 120.5600  1.4022 
+IC CE2  CG   *CD2 HD2   1.4022 120.5600 -177.5700 119.9800  1.0813 
+IC CG   CD1  CE1  CZ    1.4064 120.4000   -0.1900 120.0900  1.3978 
+IC CZ   CD1  *CE1 HE1   1.3978 120.0900  179.6400 120.5800  1.0799 
+IC CZ   CD2  *CE2 HE2   1.3979 119.9200 -178.6900 119.7600  1.0798 
+IC CE1  CE2  *CZ  OH    1.3978 120.0500 -178.9800 120.2500  1.4063 
+IC CE1  CZ   OH   HH    1.3978 119.6800  175.4500 107.4700  0.9594 
+ 
+RESI VAL           0.000 
+! 
+!     |    HG11 HG12 
+!  HN-N      | / 
+!     |     CG1--HG13 
+!     |    / 
+!  HA-CA--CB-HB 
+!     |    \ 
+!     |     CG2--HG21 
+!   O=C     | \ 
+!     |   HG21 HG22 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+GROUP 
+ATOM CB   CD31A   -0.074  ALPHA -1.914  THOLE 0.593 
+ATOM HB   HDA1A    0.074 
+GROUP 
+ATOM CG1  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HG11 HDA3A    0.059 
+ATOM HG12 HDA3A    0.059 
+ATOM HG13 HDA3A    0.059 
+GROUP 
+ATOM CG2  CD33A   -0.177  ALPHA -2.051  THOLE 1.3 
+ATOM HG21 HDA3A    0.059 
+ATOM HG22 HDA3A    0.059 
+ATOM HG23 HDA3A    0.059 
+ 
+BOND N    CA        CA   C         C    +N        CA   HA 
+BOND N    HN        C    O 
+BOND CA   CB        CB   HB 
+BOND CB   CG1       CG1  HG11      CG1  HG12      CG1  HG13 
+BOND CB   CG2       CG2  HG21      CG2  HG22      CG2  HG23 
+BOND O    LPOA      O    LPOB 
+ 
+IMPR C   CA  +N  O   N  -C  CA HN 
+CMAP -C  N   CA  C   N  CA  C  +N 
+ 
+LONEPAIR relative LPOA O C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPOB O C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY O C LPOA LPOB  A11  0.82322 A22  1.14332 
+ 
+DONOR HN N 
+ACCEPTOR O C 
+!C22 IC Table 
+IC -C   CA   *N   HN    1.3482 124.5700  180.0000 114.4100  0.9966 
+IC -C   N    CA   C     1.3482 124.5700  180.0000 105.5400  1.5180 
+IC N    CA   C    +N    1.4570 105.5400  180.0000 117.8300  1.3471 
+IC +N   CA   *C   O     1.3471 117.8300  180.0000 120.7000  1.2297 
+IC CA   C    +N   +CA   1.5180 117.8300  180.0000 124.0800  1.4471 
+IC N    C    *CA  CB    1.4570 105.5400  122.9500 111.2300  1.5660 
+IC N    C    *CA  HA    1.4570 105.5400 -117.2400 107.4600  1.0828 
+IC N    CA   CB   CG1   1.4570 113.0500  180.0000 113.9700  1.5441 
+IC CG1  CA   *CB  CG2   1.5441 113.9700  123.9900 112.1700  1.5414 
+IC CG1  CA   *CB  HB    1.5441 113.9700 -119.1700 107.5700  1.1178 
+IC CA   CB   CG1  HG11  1.5660 113.9700  177.8300 110.3000  1.1114 
+IC HG11 CB   *CG1 HG12  1.1114 110.3000  119.2500 111.6700  1.1097 
+IC HG11 CB   *CG1 HG13  1.1114 110.3000 -119.4900 110.7000  1.1110 
+IC CA   CB   CG2  HG21  1.5660 112.1700 -177.7800 110.7100  1.1108 
+IC HG21 CB   *CG2 HG22  1.1108 110.7100  120.0800 110.5600  1.1115 
+IC HG21 CB   *CG2 HG23  1.1108 110.7100 -119.5500 111.2300  1.1098 
+ 
+PRES NTER          1.000 ! N-terminus in polypeptide 
+! 
+!          HT1 
+!     (+) / 
+! --CA---N--HT2 
+!    |    \ 
+!   HA     HT3 
+! 
+DELETE ATOM HN 
+! 
+GROUP                  ! use in generate statement 
+ATOM N    ND3P3A  -0.349  ALPHA -1.298  THOLE 0.895 
+ATOM HT1  HDP1B    0.340 
+ATOM HT2  HDP1B    0.340 
+ATOM HT3  HDP1B    0.340 
+ATOM CA   CD31C    0.388  ALPHA -0.960  THOLE 1.078 ! charge adjusted to yield unit charge 
+ATOM HA   HDA1C   -0.017 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+ 
+BOND N   HT1  N   HT2 N   HT3 
+ 
+IC C    CA   N    HT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC HT1  CA   *N   HT2   0.0000   0.0000  120.0000   0.0000  0.0000 
+IC HT1  CA   *N   HT3   0.0000   0.0000 -120.0000   0.0000  0.0000 
+ 
+PRES NTES          1.000 ! N-terminus in single amino acid 
+! Note: with CT3 use NTER 
+! 
+!          HT1 
+!     (+) / 
+! --CA---N--HT2 
+!    |    \ 
+!   HA     HT3 
+! 
+DELETE ATOM HN 
+! 
+GROUP                  ! use in generate statement 
+ATOM N    ND3P3A  -0.349  ALPHA -1.298  THOLE 0.895 
+ATOM HT1  HDP1B    0.340 
+ATOM HT2  HDP1B    0.340 
+ATOM HT3  HDP1B    0.340 
+ATOM CA   CD31C    0.186  ALPHA -1.656  THOLE 0.895  ! charge adjusted to yield unit charge 
+ATOM HA   HDA1C    0.143                             ! charge adjusted to yield unit charge 
+ 
+BOND N   HT1  N   HT2 N   HT3 
+ 
+IC C    CA   N    HT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC HT1  CA   *N   HT2   0.0000   0.0000  120.0000   0.0000  0.0000 
+IC HT1  CA   *N   HT3   0.0000   0.0000 -120.0000   0.0000  0.0000 
+ 
+PRES GNTE          1.000 ! Glycine N-terminus (formally GLYP) in polypeptide 
+! 
+!   HA1   HT1 
+!    |(+)/ 
+! --CA--N--HT2 
+!    |   \ 
+!   HA2   HT3 
+! 
+DELETE ATOM HN 
+! 
+GROUP                  ! use in generate statement 
+ATOM N    ND3P3A  -0.349  ALPHA -1.298  THOLE 0.895 
+ATOM HT1  HDP1B    0.340 
+ATOM HT2  HDP1B    0.340 
+ATOM HT3  HDP1B    0.340 
+ATOM CA   CD32C    0.085  ALPHA -1.656  THOLE 0.895 !charge adjusted to yield neutral charge 
+ATOM HA1  HDA2C    0.143 
+ATOM HA2  HDA2C    0.143 
+ATOM C    CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM O    OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPOA LPDO1   -0.312 
+ATOM LPOB LPDO1   -0.227 
+ 
+BOND N   HT1  N   HT2 N   HT3 
+ 
+DONOR HT1 N 
+DONOR HT2 N 
+DONOR HT3 N 
+IC HT1  N    CA   C     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC HT2  CA   *N   HT1   0.0000  0.0000  120.0000  0.0000  0.0000 
+IC HT3  CA   *N   HT2   0.0000  0.0000  120.0000  0.0000  0.0000 
+ 
+PRES GNTS          1.000 ! Glycine N-terminus in single amino acid 
+! 
+!   HA1   HT1 
+!    |(+)/ 
+! --CA--N--HT2 
+!    |   \ 
+!   HA2   HT3 
+! 
+DELETE ATOM HN 
+! 
+GROUP                  ! use in generate statement 
+ATOM N    ND3P3A  -0.349  ALPHA -1.298  THOLE 0.895 
+ATOM HT1  HDP1B    0.340 
+ATOM HT2  HDP1B    0.340 
+ATOM HT3  HDP1B    0.340 
+ATOM CA   CD32C    0.043  ALPHA -1.656  THOLE 0.895 
+ATOM HA1  HDA2C    0.143 
+ATOM HA2  HDA2C    0.143 
+ 
+BOND N   HT1  N   HT2 N   HT3 
+ 
+DONOR HT1 N 
+DONOR HT2 N 
+DONOR HT3 N 
+IC HT1  N    CA   C     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC HT2  CA   *N   HT1   0.0000  0.0000  120.0000  0.0000  0.0000 
+IC HT3  CA   *N   HT2   0.0000  0.0000  120.0000  0.0000  0.0000 
+ 
+!optimization required 
+PRES PROP          1.000 ! Proline N-Terminal !yields unit charge 
+! 
+!   HA 
+!   | 
+!  -CA   HT1 
+!  /  \ / 
+!      N(+) 
+!     / \ 
+!  -CD   HT2 
+!   | \ 
+! 
+GROUP   	       ! use in generate statement 
+ATOM N    ND3P2A  -0.070  ALPHA -1.479  THOLE 0.111 
+ATOM HT1  HDP1B    0.266 
+ATOM HT2  HDP1B    0.266 
+ATOM CD   CD32A    0.119  ALPHA -1.578  THOLE 1.429 
+ATOM HD1  HDA2C    0.104 
+ATOM HD2  HDA2C    0.104 
+ATOM CA   CD31C    0.114  ALPHA -1.578  THOLE 1.429  !correction from 0.165 to obtain unit charge 
+ATOM HA   HDA1C    0.104 
+ATOM C    CD2O1A   0.528  ALPHA -1.342  THOLE 0.887 
+ATOM O    OD2C1A   0.000  ALPHA -0.682  THOLE 1.905 
+ATOM LPOA LPDO1   -0.371 
+ATOM LPOB LPDO1   -0.215 
+ATOM CB   CD32A   -0.116  ALPHA -1.710  THOLE 1.295 
+ATOM HB1  HDA2A    0.084 
+ATOM HB2  HDA2A    0.084 
+ATOM CG   CD32A   -0.143  ALPHA -2.049  THOLE 1.295 
+ATOM HG1  HDA2A    0.071 
+ATOM HG2  HDA2A    0.071 
+ 
+BOND HT1 N HT2 N 
+ 
+DONOR HT1 N 
+DONOR HT2 N 
+IC HT1  CA   *N   CD    0.0000  0.0000  120.0000  0.0000  0.0000 
+IC HT2  CA   *N   HT1   0.0000  0.0000  120.0000  0.0000  0.0000 
+ 
+PRES ACE           0.000 ! acetylated N-terminus in di- and polypeptides 
+                         ! use in generate statement 
+! 
+! HY1 HY2 HY3 
+!    \ | / 
+!     CAY 
+!      | 
+!      CY=OY 
+!      | 
+! 
+GROUP 
+ 
+ATOM CAY  CD33C   -0.102  ALPHA -1.894  THOLE 2.122 
+ATOM HY1  HDA3A    0.048 
+ATOM HY2  HDA3A    0.048 
+ATOM HY3  HDA3A    0.048 
+ATOM CY   CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM OY   OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPY1 LPDO1   -0.312 
+ATOM LPY2 LPDO1   -0.227 
+ 
+BOND N      CY     CAY    CY     CY     OY 
+BOND CAY    HY1    CAY    HY2    CAY    HY3 
+BOND OY     LPY1   OY    LPY2 
+ 
+IMPR CY     CAY    N      OY     N      CY     CA     HN 
+CMAP CY     N      CA     C      N      CA     C      +N 
+CMAP CY     N      CA     C      N      CA     C      NT !for dipeptide 
+ 
+LONEPAIR relative LPY1 OY CY CAY distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPY2 OY CY CAY distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OY CY LPY1 LPY2 A11  0.82322 A22  1.14332 
+ 
+ACCEPTOR OY CY 
+IC CY   N    CA   C     0.0000  0.0000  -60.0000  0.0000  0.0000 
+IC CY   CA   *N   HN    0.0000  0.0000  180.0000  0.0000  0.0000 
+IC CAY  CY   N    CA    0.0000  0.0000  180.0000  0.0000  0.0000 
+IC N    CAY  *CY  OY    0.0000  0.0000  180.0000  0.0000  0.0000 
+IC OY   CY   CAY  HY1   0.0000  0.0000  180.0000  0.0000  0.0000 
+IC OY   CY   CAY  HY2   0.0000  0.0000   60.0000  0.0000  0.0000 
+IC OY   CY   CAY  HY3   0.0000  0.0000  -60.0000  0.0000  0.0000 
+ 
+PRES ACP           0.000 ! acetylated N-terminus for proline 
+                         ! use in generate statement 
+! 
+!this patch is directly from ACE. It is anticipated that different electrostatic 
+!terms will be required for the imino proton in Proline 
+! 
+! 
+! HY1 HY2 HY3 
+!    \ | / 
+!     CAY 
+!      | 
+!      CY=OY 
+!      | 
+GROUP 
+ATOM CAY  CD33C   -0.102  ALPHA -1.894  THOLE 2.122 
+ATOM HY1  HDA3A    0.048 
+ATOM HY2  HDA3A    0.048 
+ATOM HY3  HDA3A    0.048 
+ATOM CY   CD2O1A   0.497  ALPHA -0.675  THOLE 0.295 
+ATOM OY   OD2C1A   0.000  ALPHA -0.651  THOLE 0.310 
+ATOM LPY1 LPDO1   -0.312 
+ATOM LPY2 LPDO1   -0.227 
+ 
+BOND N      CY     CAY    CY     CY     OY 
+BOND CAY    HY1    CAY    HY2    CAY    HY3 
+BOND OY     LPY1   OY    LPY2 
+ 
+IMPR CY     CAY    N      OY     N      CY     CA     CD 
+CMAP CY     N      CA     C      N      CA     C      +N 
+CMAP CY     N      CA     C      N      CA     C      NT !for dipeptide 
+ 
+LONEPAIR relative LPY1 OY CY CAY distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPY2 OY CY CAY distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OY CY LPY1 LPY2  A11  0.82322 A22  1.14332 
+ 
+ACCEPTOR OY CY 
+IC A1     A2     A3     A4       1.3474  124.31  180.00  114.26   0.9979 
+IC CY     N      CA     C        0.0000    0.00  -60.00    0.00   0.0000 
+IC CY     CA     *N     CD       0.0000    0.00  180.00    0.00   0.0000 
+IC CAY    CY     N      CA       0.0000    0.00  180.00    0.00   0.0000 
+IC N      CAY    *CY    OY       0.0000    0.00  180.00    0.00   0.0000 
+IC OY     CY     CAY    HY1      0.0000    0.00  180.00    0.00   0.0000 
+IC HY1    CY     *CAY   HY2      0.0000    0.00  120.00    0.00   0.0000 
+IC HY1    CY     *CAY   HY3      0.0000    0.00 -120.00    0.00   0.0000 
+ 
+!correct once neutral amine electrostatic terms are available 
+!PRES NNEU          0.000 ! neutral N-terminus; charges from LSN 
+!                         ! use in generate statement 
+!!         HT1 
+!!        / 
+!! --CA--N--HT2 
+!!   | 
+!!   HA 
+!! 
+!DELETE ATOM HN 
+!GROUP 
+!ATOM N    NH2     -0.960 
+!ATOM HT1  H        0.340 
+!ATOM HT2  H        0.340 
+!ATOM CA   CT1      0.190 
+!ATOM HA   HB       0.090 
+!BOND N      HT1    N      HT2 
+!DONOR HT1 N 
+!DONOR HT2 N 
+!IC HT1  N    CA   C     0.0000  0.0000  180.0000  0.0000  0.0000 
+!IC HT2  CA   *N   HT1   0.0000  0.0000  120.0000  0.0000  0.0000 
+ 
+PRES CTER         -1.000 ! C-terminus for polypeptide 
+! 
+!     OT2(-) 
+!    / 
+! --C 
+!    \\ 
+!     OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O2A   0.484  ALPHA -1.016  THOLE 0.899 !charge adjusted to yield -1 total charge for COO atoms 
+ATOM OT1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OT2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LPT1 LPD     -0.383 
+ATOM LPT2 LPD     -0.383 
+ATOM LPT3 LPD     -0.383 
+ATOM LPT4 LPD     -0.383 
+ 
+BOND C   OT1   C   OT2 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH C  OT1 OT2 CA 
+ 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LPT3 OT2 C OT1 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT4 OT2 C OT1 distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OT1 C  LPT1 LPT2 A11 0.7229 A22 1.265 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.7229 A22 1.265 
+ 
+IC N    CA   C    OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CTEG         -1.000 ! C-terminus for polypeptide terminating with a glycine 
+! 
+!     OT2(-) 
+!    / 
+! --C 
+!    \\ 
+!     OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD32C   -0.038  ALPHA -0.960  THOLE 1.078 !charge adjusted to yield -1 total charge 
+ATOM HA1  HDA2A   -0.017 
+ATOM HA2  HDA2A   -0.017 
+ATOM C    CD2O2A   0.708  ALPHA -1.016  THOLE 0.899 !charge adjusted to yield -1 total charge for COO atoms 
+ATOM OT1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OT2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LPT1 LPD     -0.383 
+ATOM LPT2 LPD     -0.383 
+ATOM LPT3 LPD     -0.383 
+ATOM LPT4 LPD     -0.383 
+ 
+BOND C   OT1   C   OT2 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH C  OT1 OT2 CA 
+ 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LPT3 OT2 C OT1 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT4 OT2 C OT1 distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OT1 C  LPT1 LPT2 A11 0.7229 A22 1.265 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.7229 A22 1.265 
+ 
+IC N    CA   C    OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CTEP         -1.000 ! C-terminus for polypeptide terminated with proline 
+! 
+!     OT2(-) 
+!    / 
+! --C 
+!    \\ 
+!     OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM N    ND3A3   -0.239  ALPHA -1.400  THOLE 0.754 
+ATOM CA   CD31C   -0.141  ALPHA -1.500  THOLE 0.432 
+ATOM HA   HDA1A   -0.014 
+ATOM CD   CD32A    0.017  ALPHA -1.500  THOLE 1.100 
+ATOM HD1  HDA2A    0.072 
+ATOM HD2  HDA2A    0.072 
+ATOM CB   CD32A   -0.116  ALPHA -1.710  THOLE 1.295 
+ATOM HB1  HDA2A    0.084 
+ATOM HB2  HDA2A    0.084 
+ATOM CG   CD32A   -0.143  ALPHA -2.049  THOLE 1.295 
+ATOM HG1  HDA2A    0.071 
+ATOM HG2  HDA2A    0.071 
+ATOM C    CD2O2A   0.708  ALPHA -1.016  THOLE 0.899 !charge adjusted to yield -1 total charge for COO atoms 
+ATOM OT1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OT2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LPT1 LPD     -0.383 
+ATOM LPT2 LPD     -0.383 
+ATOM LPT3 LPD     -0.383 
+ATOM LPT4 LPD     -0.383 
+ 
+BOND C   OT1   C   OT2 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH C  OT1 OT2 CA 
+ 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LPT3 OT2 C OT1 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT4 OT2 C OT1 distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OT1 C  LPT1 LPT2 A11 0.7229 A22 1.265 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.7229 A22 1.265 
+ 
+IC N    CA   C    OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CTES         -1.000 ! C-terminus for single amino acid 
+! Note: with ACE use CTER 
+! 
+!     OT2(-) 
+!    / 
+! --C 
+!    \\ 
+!     OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM C    CD2O2A   0.526  ALPHA -1.016  THOLE 0.899 !charge adjusted to yield -1 total charge for COO atoms 
+ATOM OT1  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM OT2  OD2C2A   0.003  ALPHA -0.699  THOLE 2.399 
+ATOM LPT1 LPD     -0.383 
+ATOM LPT2 LPD     -0.383 
+ATOM LPT3 LPD     -0.383 
+ATOM LPT4 LPD     -0.383 
+ 
+BOND C   OT1   C   OT2 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH C  OT1 OT2 CA 
+ 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.35 angle 110.0 dihe 180.0 
+LONEPAIR relative LPT3 OT2 C OT1 distance 0.35 angle 110.0 dihe   0.0 
+LONEPAIR relative LPT4 OT2 C OT1 distance 0.35 angle 110.0 dihe 180.0 
+ANISOTROPY OT1 C  LPT1 LPT2 A11 0.7229 A22 1.265 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.7229 A22 1.265 
+ 
+IC N    CA   C    OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CNEU          0.000 ! protonated C-terminus for polypeptide 
+! 
+!    OT2-HT 
+!    / 
+! --C 
+!    \\ 
+!    OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.103  ALPHA -0.960  THOLE 1.078 !charge adjusted from 0.858 to yield 0 total charge for COOH atoms 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O3A   0.858  ALPHA -1.207  THOLE 0.708 
+ATOM OT1  OD2C3A   0.000  ALPHA -0.922  THOLE 1.539 
+ATOM OT2  OD30D    0.000  ALPHA -1.280  THOLE 1.124 
+ATOM HT   HDP1A    0.374 
+ATOM LPT1 LPD     -0.319 
+ATOM LPT2 LPD     -0.319 
+ATOM LPT3 LPD     -0.285 
+ATOM LPT4 LPD     -0.285 
+ 
+BOND C   OT1   C   OT2   OT2 HT 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH OT1 CA  OT2 C 
+ 
+!standard carbonyl 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OT1 C LPT1 LPT2  A11 0.6968  A22 1.2194 
+ 
+!from MeOH 
+LONEPAIR relative LPT3 OT2 C HT  distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPT4 OT2 C HT  distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OT2 C LPT3 LPT4  A11 0.8108  A22 1.2162 
+ 
+IC N    CA   C    OT1   0.0000   0.0000    0.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+!IC OT1  CAN  *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 !dummy IC for building dipeptides *DELETE* 
+IC CA   C    OT2  HT    0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CNEG          0.000 ! protonated C-terminus for polypeptide with terminal glycine 
+                         ! Yes, the patch name is not ideal; the total charge is zero 
+! 
+!    OT2-HT 
+!    / 
+! --C 
+!    \\ 
+!    OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD32C    0.120  ALPHA -0.960  THOLE 1.078 !charge adjusted to yield 0 total charge for COOH atoms 
+ATOM HA1  HDA2A   -0.017 
+ATOM HA2  HDA2A   -0.017 
+ATOM C    CD2O3A   0.858  ALPHA -1.207  THOLE 0.708 
+ATOM OT1  OD2C3A   0.000  ALPHA -0.922  THOLE 1.539 
+ATOM OT2  OD30D    0.000  ALPHA -1.280  THOLE 1.124 
+ATOM HT   HDP1A    0.374 
+ATOM LPT1 LPD     -0.319 
+ATOM LPT2 LPD     -0.319 
+ATOM LPT3 LPD     -0.285 
+ATOM LPT4 LPD     -0.285 
+ 
+BOND C   OT1   C   OT2   OT2 HT 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH OT1 CA  OT2 C 
+ 
+!standard carbonyl 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OT1 C LPT1 LPT2  A11 0.6968  A22 1.2194 
+ 
+!from MeOH 
+LONEPAIR relative LPT3 OT2 C HT  distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPT4 OT2 C HT  distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OT2 C LPT3 LPT4  A11 0.8108  A22 1.2162 
+ 
+IC N    CA   C    OT1   0.0000   0.0000    0.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC CA   C    OT2  HT    0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CNES          0.000 ! protonated C-terminus for single amino acid 
+! Note: with ACE use CNEU 
+! 
+!    OT2-HT 
+!    / 
+! --C 
+!    \\ 
+!    OT1 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+GROUP 
+ATOM C    CD2O3A   0.834  ALPHA -1.207  THOLE 0.708 !charge adjusted from 0.858 to yield 0 total charge for COOH atoms 
+ATOM OT1  OD2C3A   0.000  ALPHA -0.922  THOLE 1.539 
+ATOM OT2  OD30D    0.000  ALPHA -1.280  THOLE 1.124 
+ATOM HT   HDP1A    0.374 
+ATOM LPT1 LPD     -0.319 
+ATOM LPT2 LPD     -0.319 
+ATOM LPT3 LPD     -0.285 
+ATOM LPT4 LPD     -0.285 
+ 
+BOND C   OT1   C   OT2   OT2 HT 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPH OT1 CA  OT2 C 
+ 
+!standard carbonyl 
+LONEPAIR relative LPT1 OT1 C OT2 distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C OT2 distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OT1 C LPT1 LPT2  A11 0.6968  A22 1.2194 
+ 
+!from MeOH 
+LONEPAIR relative LPT3 OT2 C HT  distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPT4 OT2 C HT  distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OT2 C LPT3 LPT4  A11 0.8108  A22 1.2162 
+ 
+IC N    CA   C    OT1   0.0000   0.0000    0.0000   0.0000  0.0000 
+IC OT1  CA   *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+!IC OT1  CAN  *C   OT2   0.0000   0.0000  180.0000   0.0000  0.0000 !dummy IC for building dipeptides *DELETE* 
+IC CA   C    OT2  HT    0.0000   0.0000  180.0000   0.0000  0.0000 
+ 
+PRES CT1           0.000 ! methylated C-terminus from methyl acetate 
+                         ! total charge to neutralize C-terminal peptide bond 
+                         ! use in generate statement 
+! 
+!       OT1 
+!      // 
+! -CA--C       HT1 
+!  |    \      / 
+!  HA    OT2--CT--HT2 
+!              \ 
+!              HT3 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.059  ALPHA -0.960  THOLE 1.078 !charge adjusted to achieve neutral system 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O3A   0.697  ALPHA -1.370  THOLE 1.747 
+ATOM OT1  OD2C3A   0.000  ALPHA -0.904  THOLE 0.565 
+ATOM OT2  OD30C    0.000  ALPHA -0.732  THOLE 0.601 
+ATOM CT   CD33D   -0.030  ALPHA -1.797  THOLE 0.410 
+ATOM HT1  HDA3A    0.116 
+ATOM HT2  HDA3A    0.116 
+ATOM HT3  HDA3A    0.116 
+ATOM LPT1 LPD     -0.349 
+ATOM LPT2 LPD     -0.258 
+ATOM LPT3 LPD     -0.170 
+ATOM LPT4 LPD     -0.170 
+ 
+BOND C   OT1   C   OT2   OT2  CT 
+BOND CT  HT1   CT  HT2   CT   HT3 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPR C   OT2   CA  OT1 
+ 
+!LP positions and anisotropic polarizability from MAS 
+LONEPAIR relative LPT1 OT1 C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OT1 C LPT1 LPT2  A11 0.6968  A22 1.2194 
+ 
+!LP positions and anisotropic polarizability from MAS 
+LONEPAIR relative LPT3 OT2 C CT distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPT4 OT2 C CT  distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.8108 A22 1.2162 
+ 
+ACCEPTOR OT1 C 
+ACCEPTOR OT2 C 
+IC N    CA   C    OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT2  CA   *C   OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC CA   C    OT2  CT    0.0000   0.0000  180.0000   0.0000  0.0000 
+IC C    OT2  CT   HT1   0.0000   0.0000    0.0000   0.0000  0.0000 
+IC C    OT2  CT   HT2   0.0000   0.0000  120.0000   0.0000  0.0000 
+IC C    OT2  CT   HT3   0.0000   0.0000  240.0000   0.0000  0.0000 
+ 
+PRES CT1G          0.000 ! methylated C-terminus from methyl acetate, for C-terminal GLY 
+                         ! total charge to neutralize C-terminal peptide bond 
+                         ! use in generate statement 
+! 
+!       OT1 
+!      // 
+! -CA--C       HT1 
+!  |    \      / 
+!  HA    OT2--CT--HT2 
+!              \ 
+!              HT3 
+! 
+DELETE ATOM O 
+DELETE ATOM DO 
+DELETE ATOM LPOA 
+DELETE ATOM LPOB 
+! 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD32C    0.076  ALPHA -0.960  THOLE 1.078 !charge adjusted to achieve neutral system 
+ATOM HA1  HDA2A   -0.017 
+ATOM HA2  HDA2A   -0.017 
+ATOM C    CD2O3A   0.697  ALPHA -1.370  THOLE 1.747 
+ATOM OT1  OD2C3A   0.000  ALPHA -0.904  THOLE 0.565 
+ATOM OT2  OD30C    0.000  ALPHA -0.732  THOLE 0.601 
+ATOM CT   CD33D   -0.030  ALPHA -1.797  THOLE 0.410 
+ATOM HT1  HDA3A    0.116 
+ATOM HT2  HDA3A    0.116 
+ATOM HT3  HDA3A    0.116 
+ATOM LPT1 LPD     -0.349 
+ATOM LPT2 LPD     -0.258 
+ATOM LPT3 LPD     -0.170 
+ATOM LPT4 LPD     -0.170 
+ 
+BOND C   OT1   C   OT2   OT2  CT 
+BOND CT  HT1   CT  HT2   CT   HT3 
+BOND OT1 LPT1  OT1 LPT2 
+BOND OT2 LPT3  OT2 LPT4 
+ 
+IMPR C   OT2   CA  OT1 
+ 
+!LP positions and anisotropic polarizability from MAS 
+LONEPAIR relative LPT1 OT1 C CA distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPT2 OT1 C CA distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OT1 C LPT1 LPT2  A11 0.6968  A22 1.2194 
+ 
+!LP positions and anisotropic polarizability from MAS 
+LONEPAIR relative LPT3 OT2 C CT distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPT4 OT2 C CT  distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OT2 C  LPT3 LPT4 A11 0.8108 A22 1.2162 
+ 
+ACCEPTOR OT1 C 
+ACCEPTOR OT2 C 
+IC N    CA   C    OT2   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC OT2  CA   *C   OT1   0.0000   0.0000  180.0000   0.0000  0.0000 
+IC CA   C    OT2  CT    0.0000   0.0000  180.0000   0.0000  0.0000 
+IC C    OT2  CT   HT1   0.0000   0.0000    0.0000   0.0000  0.0000 
+IC C    OT2  CT   HT2   0.0000   0.0000  120.0000   0.0000  0.0000 
+IC C    OT2  CT   HT3   0.0000   0.0000  240.0000   0.0000  0.0000 
+ 
+PRES CT2           0.000 ! amidated C-terminus for polypeptide 
+!                        ! use in generate statement 
+!     | 
+!   O=C 
+!     | 
+!     NT 
+!    / \ 
+! HTC1 HTC2 (HTC1 is cis to O) 
+! 
+! 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD31C    0.169  ALPHA -0.960  THOLE 1.078 
+ATOM HA   HDA1A   -0.017 
+ATOM C    CD2O1A   0.726  ALPHA -1.583  THOLE 1.095 !charge adjusted to yield neutral charge 
+ATOM O    OD2C1A   0.035  ALPHA -0.885  THOLE 1.227 
+ATOM NT   ND2A1   -0.782  ALPHA -1.717  THOLE 1.132 
+ATOM HTC1 HDP1A    0.303 
+ATOM HTC2 HDP1A    0.351 
+ATOM LPOA LPDO1   -0.411 
+ATOM LPOB LPDO1   -0.264 
+ 
+BOND C  NT   NT  HTC1 NT  HTC2 
+ 
+IMPR C  CA   NT  O    NT  HTC1 HTC2 C 
+CMAP -C  N   CA  C    N   CA   C    NT 
+ 
+DONOR HT1 NT 
+DONOR HT2 NT 
+ 
+IC N    CA   C    O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC NT   CA   *C   O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC CA   C    NT   HTC1  0.0000  0.0000  180.0000  0.0000  0.0000 
+IC HTC1 C    *NT  HTC2  0.0000  0.0000  180.0000  0.0000  0.0000 
+ 
+PRES CT2G          0.000 ! amidated C-terminus for polypeptide terminating with a glycine 
+!                        ! use in generate statement 
+!     | 
+!   O=C 
+!     | 
+!     NT 
+!    / \ 
+! HTC1 HTC2 (HTC1 is cis to O) 
+! 
+! 
+ATOM N    ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HN   HDP1A    0.272 
+ATOM CA   CD32C    0.090  ALPHA -0.960  THOLE 1.078 
+ATOM HA1  HDA2A   -0.017 
+ATOM HA2  HDA2A   -0.017 
+ATOM C    CD2O1A   0.822  ALPHA -1.583  THOLE 1.095 !charge adjusted to yield neutral charge 
+ATOM O    OD2C1A   0.035  ALPHA -0.885  THOLE 1.227 
+ATOM NT   ND2A1   -0.782  ALPHA -1.717  THOLE 1.132 
+ATOM HTC1 HDP1A    0.303 
+ATOM HTC2 HDP1A    0.351 
+ATOM LPOA LPDO1   -0.411 
+ATOM LPOB LPDO1   -0.264 
+ 
+BOND C  NT   NT  HTC1 NT  HTC2 
+ 
+IMPR C  CA   NT  O    NT  HTC1 HTC2 C 
+CMAP -C  N   CA  C    N   CA   C    NT 
+ 
+DONOR HTC1 NT 
+DONOR HTC2 NT 
+IC N    CA   C    O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC NT   CA   *C   O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC CA   C    NT   HTC1  0.0000  0.0000  180.0000  0.0000  0.0000 
+IC HTC1 C    *NT  HTC2  0.0000  0.0000  180.0000  0.0000  0.0000 
+ 
+PRES CT2S          0.000 ! amidated C-terminus for single amino acid 
+!                        ! use in generate statement 
+!     |                  ! HTC1/HTC2 nomenclature to avoid conflict with NTER in single amino acids 
+!   O=C 
+!     | 
+!     NT 
+!    / \ 
+! HTC1 HTC2 (HTC1 is cis to O) 
+! 
+! 
+ATOM C    CD2O1A   0.768  ALPHA -1.583  THOLE 1.095 !charge adjusted to yield neutral charge 
+ATOM O    OD2C1A   0.035  ALPHA -0.885  THOLE 1.227 
+ATOM NT   ND2A1   -0.782  ALPHA -1.717  THOLE 1.132 
+ATOM HTC1 HDP1A    0.303 
+ATOM HTC2 HDP1A    0.351 
+ATOM LPOA LPDO1   -0.411 
+ATOM LPOB LPDO1   -0.264 
+ 
+BOND C  NT   NT  HTC1 NT  HTC2 
+ 
+IMPR C  CA   NT  O    NT  HTC1 HTC2 C 
+CMAP -C  N   CA  C    N   CA   C    NT 
+ 
+DONOR HTC1 NT 
+DONOR HTC2 NT 
+IC N    CA   C    O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC NT   CA   *C   O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC CA   C    NT   HTC1  0.0000  0.0000  180.0000  0.0000  0.0000 
+IC HTC1 C    *NT  HTC2  0.0000  0.0000  180.0000  0.0000  0.0000 
+ 
+PRES CT3           0.000 ! N-Methylamide C-terminus 
+!                        ! use in generate statement 
+!       |                ! NOT compatible with PRES NTER for single amino acid due to non-unit charge 
+!       C=O 
+!       | 
+!       NT-HNT 
+!       | 
+! HTC1-CAT-HTC3 
+!       | 
+!      HTC2 
+! 
+ATOM NT   ND2A2   -0.382  ALPHA -1.942  THOLE 0.250 
+ATOM HNT  HDP1A    0.272 
+ATOM CAT  CD33C   -0.055  ALPHA -1.639  THOLE 2.122 
+ATOM HTC1 HDA3A    0.055 
+ATOM HTC2 HDA3A    0.055 
+ATOM HTC3 HDA3A    0.055 
+ 
+BOND C    NT        NT   HNT       NT   CAT 
+BOND CAT  HTC1      CAT  HTC2      CAT  HTC3 
+ 
+IMPR C   CA  NT  O    NT  C    CAT  HNT 
+CMAP -C  N   CA  C    N   CA   C    NT 
+ 
+DONOR HNT NT 
+IC N    CA   C    NT    0.0000  0.0000  180.0000  0.0000  0.0000 
+IC NT   CA   *C   O     0.0000  0.0000  180.0000  0.0000  0.0000 
+IC C    CAT  *NT  HNT   0.0000  0.0000  180.0000  0.0000  0.0000 
+IC CA   C    NT   CAT   0.0000  0.0000  180.0000  0.0000  0.0000 
+IC C    NT   CAT  HTC1  0.0000  0.0000   60.0000  0.0000  0.0000 
+IC HTC1 NT   *CAT HTC2  0.0000  0.0000  120.0000  0.0000  0.0000 
+IC HTC1 NT   *CAT HTC3  0.0000  0.0000 -120.0000  0.0000  0.0000 
+ 
+PRES DISU          0.000 ! patch for disulfides. Patch must be 1-CYS and 2-CYS. 
+! 
+!           2SG--2CB-- 
+!          / 
+! -1CB--1SG 
+! 
+DELETE ATOM 1HG1 
+DELETE ATOM 1LPGA 
+DELETE ATOM 1LPGB 
+DELETE ATOM 2HG1 
+DELETE ATOM 2LPGA 
+DELETE ATOM 2LPGB 
+ATOM 1CB   CD32A   -0.070   ALPHA -1.888  THOLE 1.067 
+ATOM 1HB1  HDA2A    0.087 
+ATOM 1HB2  HDA2A    0.087 
+ATOM 1SG   SD30B    0.000   ALPHA -2.686  THOLE 1.082 
+ATOM 1LPSA LPD     -0.052 
+ATOM 1LPSB LPD     -0.052 
+ATOM 2CB   CD32A   -0.070   ALPHA -1.888  THOLE 1.067 
+ATOM 2HB1  HDA2A    0.087 
+ATOM 2HB2  HDA2A    0.087 
+ATOM 2SG   SD30B    0.000   ALPHA -2.686  THOLE 1.082 
+ATOM 2LPSA LPD     -0.052 
+ATOM 2LPSB LPD     -0.052 
+ 
+BOND 1SG   2SG 
+BOND 1SG   1LPSA    1SG    1LPSB 
+BOND 2SG   2LPSA    2SG    2LPSB 
+ 
+LONEPAIR bisector 1LPSA 1SG 1CB  2SG  distance 0.90 angle 110.0 dihe 90.0 
+LONEPAIR bisector 1LPSB 1SG 2SG  1CB  distance 0.90 angle 110.0 dihe 90.0 
+LONEPAIR bisector 2LPSA 2SG 2CB  1SG  distance 0.90 angle 110.0 dihe 90.0 
+LONEPAIR bisector 2LPSB 2SG 1SG  2CB  distance 0.90 angle 110.0 dihe 90.0 
+ANISOTROPY 1SG  1CB  1LPSA  1LPSB  A11 0.9208 A22 1.0102 
+ANISOTROPY 2SG  2CB  2LPSA  2LPSB  A11 0.9208 A22 1.0102 
+ 
+IC 1CA  1CB  1SG  2SG   0.0000  0.0000  180.0000  0.0000  0.0000 
+IC 1CB  1SG  2SG  2CB   0.0000  0.0000   90.0000  0.0000  0.0000 
+IC 1SG  2SG  2CB  2CA   0.0000  0.0000  180.0000  0.0000  0.0000 
+ 
+PRES ASPP          0.000 ! patch for protonated aspartic acid, proton on od2 
+                         ! via acetic acid, use in a patch statementand 
+                         ! follow with AUTOgenerate ANGLes DIHEdrals command 
+! 
+! HB1    OD1 
+!  |    // 
+! -CB--CG 
+!  |     \ 
+! HB2     OD2-HD2 
+! 
+DELETE ATOM LP1A 
+DELETE ATOM LP1B 
+DELETE ATOM LP2A 
+DELETE ATOM LP2B 
+! 
+GROUP 
+ATOM CB   CD32C   -0.208  ALPHA -2.114 THOLE  0.750 !charge adjusted 
+ATOM HB1  HDA2A    0.092 
+ATOM HB2  HDA2A    0.092 
+ATOM CG   CD2O3A   0.858  ALPHA -1.207 THOLE  0.708 
+ATOM OD1  OD2C3A   0.000  ALPHA -0.922 THOLE  1.539 
+ATOM OD2  OD30D    0.000  ALPHA -1.280 THOLE  1.124 
+ATOM HD2  HDP1A    0.374 
+ATOM LPP1 LPD     -0.319 
+ATOM LPP2 LPD     -0.319 
+ATOM LPP3 LPD     -0.285 
+ATOM LPP4 LPD     -0.285 
+ 
+BOND OD2  HD2 
+BOND OD1  LPP1    OD1  LPP2 
+BOND OD2  LPP3    OD2  LPP4 
+ 
+!standard carbonyl 
+LONEPAIR relative LPP1 OD1 CG OD2 distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPP2 OD1 CG OD2 distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OD1 CG LPP1 LPP2  A11 0.6968  A22 1.2194 
+ 
+!from MeOH 
+LONEPAIR relative LPP3 OD2 CG HD2 distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPP4 OD2 CG HD2 distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OD2 CG LPP3 LPP4  A11 0.8108  A22 1.2162 
+ 
+DONOR HD2 OD2 
+IC OD1  CG   OD2  HD2   0.0000  0.0000  0.0000  0.0000  0.0000 
+ 
+PRES GLUP          0.000 ! patch for protonated glutamic acid, proton on oe2 
+                         ! via acetic acid, use in a patch statementand 
+                         ! follow with AUTOgenerate ANGLes DIHEdrals command 
+! 
+! HG1    OE1 
+!  |    // 
+! -CG--CD 
+!  |     \ 
+! HG2     OE2-HE2 
+! 
+DELETE ATOM LP1A 
+DELETE ATOM LP1B 
+DELETE ATOM LP2A 
+DELETE ATOM LP2B 
+! 
+GROUP 
+ATOM CG   CD32C   -0.208  ALPHA -2.114 THOLE  0.750 !charge adjusted 
+ATOM HG1  HDA2A    0.092 
+ATOM HG2  HDA2A    0.092 
+ATOM CD   CD2O3A   0.858  ALPHA -1.207 THOLE  0.708 
+ATOM OE1  OD2C3A   0.000  ALPHA -0.922 THOLE  1.539 
+ATOM OE2  OD30D    0.000  ALPHA -1.280 THOLE  1.124 
+ATOM HE2  HDP1A    0.374 
+ATOM LPP1 LPD     -0.319 
+ATOM LPP2 LPD     -0.319 
+ATOM LPP3 LPD     -0.285 
+ATOM LPP4 LPD     -0.285 
+ 
+BOND OE2  HE2 
+BOND OE1  LPP1    OE1  LPP2 
+BOND OE2  LPP3    OE2  LPP4 
+ 
+!standard carbonyl 
+LONEPAIR relative LPP1 OE1 CD OE2 distance 0.30 angle 91.0 dihe   0.0 
+LONEPAIR relative LPP2 OE1 CD OE2 distance 0.30 angle 91.0 dihe 180.0 
+ANISOTROPY OE1 CD LPP1 LPP2  A11 0.6968  A22 1.2194 
+ 
+!from MeOH 
+LONEPAIR relative LPP3 OE2 CD HE2 distance 0.35 angle 110.9 dihe  91.0 
+LONEPAIR relative LPP4 OE2 CD HE2 distance 0.35 angle 110.9 dihe 269.0 
+ANISOTROPY OE2 CD LPP3 LPP4  A11 0.8108  A22 1.2162 
+ 
+DONOR HE2 OE2 
+IC OE1  CD   OE2  HE2   0.0000  0.0000  0.0000  0.0000  0.0000 
+ 
+!to be completed when neutral methylamine is optimized 
+!see NNEU above 
+!PRES LSN          0.000 ! patch for neutral lysine based on methylamine 
+!                        ! use in a patch statement 
+!                        ! follow with AUTOgenerate ANGLes DIHEdrals command 
+!DELETE ATOM HZ3 
+!GROUP 
+!ATOM CE   CT2     0.13 
+!ATOM HE1  HA      0.075 
+!ATOM HE2  HA      0.075 
+!ATOM NZ   NH2    -0.96 
+!ATOM HZ1  HC      0.34 
+!ATOM HZ2  HC      0.34 
+ 
+PRES LINK          0.000 ! linkage for cyclic peptide, may also be used for joining images 
+                         ! Note that the following number is required to include the CMAP 
+                         ! terms for the residues surrounding the link 
+                         !  1 refers to residue 1 position from the C terminus (residue n-1) 
+                         !  2 refers to the C terminus (residue n) which is a glycine 
+                         !  3 refers to the N terminus (usually residue 1) 
+                         !  4 refers to the N terminus plus 1 (usually residue 2) 
+                         !  use in a patch statement, perform initial 
+                         !  generation using first NONE last NONE 
+                         !  follow with AUTOgenerate ANGLes DIHEdrals command 
+BOND 2C    3N 
+IMPR 3N 2C 3CA 3HN   2C 2CA 3N 2O 
+ 
+CMAP 1C  2N  2CA  2C  2N  2CA  2C  3N 
+CMAP 2C  3N  3CA  3C  3N  3CA  3C  4N 
+ 
+IC 2N   2CA  2C   3N    0.0000  0.0000 180.0000  0.0000  0.0000 
+IC 3N   2CA  *2C  2O    0.0000  0.0000 180.0000  0.0000  0.0000 
+IC 2CA  2C   3N   3CA   0.0000  0.0000 180.0000  0.0000  0.0000 
+IC 2C   3N   3CA  3C    0.0000  0.0000 180.0000  0.0000  0.0000 
+IC 2C   3CA  *3N  3HN   0.0000  0.0000 180.0000  0.0000  0.0000 
+ 
+PRES HS2          0.00 ! Patch for neutral His, move proton from ND1 to NE2 (convert HSD to HSE) 
+                       ! use in a patch statement 
+                       ! follow with AUTOgenerate ANGLes DIHEdrals command 
+!                 HE1 
+!                 / 
+!   HB1    ND1--CE1 
+!   |     /      | 
+!  -CB--CG       | 
+!   |     \      | 
+!   HB2    CD2--NE2 
+!           |     \ 
+!          HD2    HE2 
+! 
+DELETE ATOM HD1 
+DELETE ATOM LPE2 
+DELETE ACCE NE2 
+ 
+GROUP 
+ATOM CB   CD32A    0.017  ALPHA -1.739  THOLE 0.399 !charge adjusted 
+ATOM HB1  HDA2A    0.078 
+ATOM HB2  HDA2A    0.078 
+ATOM ND1  ND2R5B   0.000  ALPHA -1.146  THOLE 0.816 
+ATOM LPD1 LPD     -0.365 
+ATOM NE2  ND2R5A  -0.040  ALPHA -1.522  THOLE 1.114 
+ATOM HE2  HDP1A    0.256 
+ATOM CG   CD2R5A  -0.252  ALPHA -1.272  THOLE 1.190 
+ATOM CE1  CD2R5B   0.064  ALPHA -1.493  THOLE 1.297 
+ATOM HE1  HDR5B   -0.018 
+ATOM CD2  CD2R5A   0.141  ALPHA -1.515  THOLE 1.190 
+ATOM HD2  HDR5A    0.041 
+ 
+BOND NE2  HE2 
+BOND ND1  LPD1 
+ 
+IMPH NE2  CD2  CE1  HE2 
+ 
+LONEPAIR bisector LPD1 ND1 CE1 CG   distance 0.35 angle 179.99 dihe 179.99 
+ANISOTROPY        ND1 LPD1 CE1 CG   A11 0.808   A22 1.384 
+ 
+DONOR HE2 NE2 
+ACCEP ND1 
+ 
+IC CE1  CD2  *NE2 HE2   0.0000  0.0000  180.0000  0.0000  0.0000 
+ 
+ 
+end 
+ 
