@@ -205,7 +205,8 @@ def lp_to_mpole(a):
         if numeq(a.lonepairs[2][4], 0.0):
             # the third lonepair only for anisotropy
             q, coor, str0 = multipole2(a)
-        else: # only SWM6, any other residues?
+        else:
+	    q, coor, str0 = multipole3(a)
             print a.lonepairs
 
     #convert A to Bohr so that the results are all in a.u. 
@@ -257,6 +258,18 @@ def multipole2(a):
     coor=[[0.0,0.0,0.0]]
     coor.append(lppos(a.lonepairs[0][6],a.lonepairs[0][7],a.lonepairs[0][8]))
     coor.append(lppos(a.lonepairs[1][6],a.lonepairs[1][7],a.lonepairs[1][8]))
+
+    return q, coor, octstr
+
+def multipole3(a):
+    # simple sanity check
+    if (a.lonepairs[0][5].lower().startswith('bise') and a.lonepairs[1][5].lower().startswith('bise') and a.lonepairs[2][5].lower().startswith('bise')  and a.lonepairs[0][1]==a.lonepairs[1][1] and a.lonepairs[0][2]==a.lonepairs[1][2] and a.lonepairs[0][3]==a.lonepairs[1][3] and a.lonepairs[0][1]==a.lonepairs[2][1] and a.lonepairs[0][2]==a.lonepairs[2][2] and a.lonepairs[0][3]==a.lonepairs[2][3]):
+        octstr='OPOLE '+a.name+'  BISECT  '+a.lonepairs[0][1]+' '+a.lonepairs[0][2]+' '+a.lonepairs[0][3]+' -'
+    q=[a.charge, a.lonepairs[0][4], a.lonepairs[1][4], a.lonepairs[2][4]]
+    coor=[[0.0,0.0,0.0,0.0]]
+    coor.append(lppos(a.lonepairs[0][6],a.lonepairs[0][7],a.lonepairs[0][8]))
+    coor.append(lppos(a.lonepairs[1][6],a.lonepairs[1][7],a.lonepairs[1][8]))
+    coor.append(lppos(a.lonepairs[2][6],a.lonepairs[2][7],a.lonepairs[2][8]))
 
     return q, coor, octstr
 
